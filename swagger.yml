@@ -125,6 +125,8 @@ definitions:
     properties:
       partnerId:
         type: string
+      vertriebsorganisationsId:
+        type: string
       firma:
         type: string
       vorname:
