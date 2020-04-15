@@ -1,7 +1,7 @@
 # kex-market-engine-api
 API zur Anbindung von Produktanbietern im Ratenkreditgeschäft.
 
-Die Schnittstelle ermöglicht die Ermittlung von Ratenkredit-Angeboten.
+Die Schnittstelle ermöglicht die Annahme von Ratenkredit-Angeboten.
 
 > :warning: Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir 
 > von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h. 
