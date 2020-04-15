@@ -280,7 +280,7 @@ definitions:
     type: string
     enum:
       - Dr.
-      - Prof. Dr.
+      - Prof.
       - Prof. Dr.
 
   geschlecht:
