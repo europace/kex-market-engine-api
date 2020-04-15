@@ -282,7 +282,6 @@ definitions:
       - Dr.
       - Prof.
       - Prof. Dr.
-      - Prof. Dr. Test
 
   geschlecht:
     type: string
