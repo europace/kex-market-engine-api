@@ -125,6 +125,8 @@ definitions:
     properties:
       partnerId:
         type: string
+      vertriebsorganisationsId:
+        type: string
       firma:
         type: string
       vorname:
@@ -279,10 +281,22 @@ definitions:
   titel:
     type: string
     enum:
+      - Dipl.-Ing.
       - Dr.
+      - Dr. med.
+      - Dr. med. dent.
+      - Dr. med. vet.
+      - Dr. ing.
+      - Dr. jur.
+      - Dr. phil.
+      - Dr. rer. nat.
+      - Dr. rer. pol.
+      - Dr. Dr.
+      - Dr. h. c.
       - Prof.
       - Prof. Dr.
-
+      - Prof. Dr. med.
+      - Prof. Dr. Dr.
   geschlecht:
     type: string
     enum:
