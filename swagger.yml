@@ -329,12 +329,18 @@ definitions:
         format: date
       beruf:
         type: string
+      arbeitgeber:
+        $ref: '#/definitions/arbeitgeber'
+
+  arbeitgeber:
+    type: object
+    properties:
+      name:
+        type: string
       branche:
         $ref: '#/definitions/branche'
       anschrift:
         $ref: '#/definitions/adresse'
-      arbeitgebername:
-        type: string
 
   beschaeftigungsverhaeltnis:
     type: string
