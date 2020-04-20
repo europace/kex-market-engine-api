@@ -331,14 +331,14 @@ definitions:
         type: string
       arbeitgeber:
         $ref: '#/definitions/arbeitgeber'
+      branche:
+        $ref: '#/definitions/branche'
 
   arbeitgeber:
     type: object
     properties:
       name:
         type: string
-      branche:
-        $ref: '#/definitions/branche'
       anschrift:
         $ref: '#/definitions/adresse'
 
@@ -391,10 +391,8 @@ definitions:
       beschaeftigungsEnde:
         type: string
         format: date
-      anschrift:
-        $ref: '#/definitions/adresse'
-      arbeitgebername:
-        type: string
+      arbeitgeber:
+        $ref: '#/definitions/arbeitgeber'
 
   derzeitigeWohnsituation:
     type: object
