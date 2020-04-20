@@ -37,6 +37,12 @@ definitions:
   request:
     type: object
     properties:
+      traceId:
+        description: zur Nachverfolgung von Anfragen über mehrere Services hinweg - bitte in Ihre Log-Einträge aufnehmen.
+        type: string
+      vorgangsnummer:
+        description: Identifiziert einen Europace-Vorgang.
+        type: string
       antragsteller:
         type: array
         items:
@@ -49,15 +55,14 @@ definitions:
         $ref: '#/definitions/konto'
       kundenbetreuer:
         $ref: '#/definitions/kundenbetreuer'
-      metadaten:
-        $ref: '#/definitions/metadaten'
       featureToggles:
         description: Zur Steuerung von Features abhängig vom Request.
         type: array
         items:
           $ref: '#/definitions/featureToggle'
     required:
-      - metadaten
+      - traceId
+      - vorgangsnummer
       - finanzierungswunsch
       - kundenbetreuer
 
@@ -66,16 +71,20 @@ definitions:
       - $ref: '#/definitions/request'
       - type: object
         properties:
+          antragsnummer:
+            description: Identifiziert einen Europace-Antrag.
+            type: string
+          angebotsvariantentyp:
+            description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
+            type: string
           bearbeiter:
             $ref: '#/definitions/bearbeiter'
           handelsbeziehung:
             $ref: '#/definitions/handelsbeziehung'
-          angebotsvariantentyp:
-            description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
-            type: string
           beratungsart:
             $ref: '#/definitions/beratungsart'
         required:
+          - antragsnummer
           - angebotsvariantentyp
           - handelsbeziehung
           - beratungsart
@@ -86,27 +95,6 @@ definitions:
       - PRAESENZ_GESCHAEFT
       - FERN_ABSATZ_GESCHAEFT
       - AUSSER_GESCHAEFTSRAUM_VERTRAG
-
-  ###
-  ### Meta
-  ###
-
-  metadaten:
-    description: Dient der Identifikation von Reqests und Vorgängen.
-    type: object
-    properties:
-      traceId:
-        description: zur Nachverfolgung von Anfragen über mehrere Services hinweg - bitte in Ihre Log-Einträge aufnehmen.
-        type: string
-      vorgangsnummer:
-        description: Identifiziert einen Europace-Vorgang.
-        type: string
-      antragsnummer:
-        description: Identifiziert einen Europace-Antrag - wird nur bei der Annahme mitgeliefert.
-        type: string
-    required:
-      - traceId
-      - vorgangsnummer
 
   featureToggle:
     type: object
@@ -165,6 +153,7 @@ definitions:
   handelsbeziehung:
     type: object
     properties:
+      description: ID eines Produktanbieters
       produktanbieter:
         type: string
       kreditProvisionswunsch:
@@ -1028,8 +1017,6 @@ definitions:
       angebotsvariantentyp:
         description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
         type: string
-      gesamtkonditionen:
-        $ref: '#/definitions/gesamtkonditionen'
       kredit:
         $ref: '#/definitions/kredit'
       status:
@@ -1053,7 +1040,6 @@ definitions:
       - produktbezeichnung
       - produktart
       - angebotsvariantentyp
-      - gesamtkonditionen
       - kredit
       - status
       - bonitaetscheck
@@ -1113,42 +1099,12 @@ definitions:
       - MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER
       - NICHT_MACHBAR
 
-  gesamtkonditionen:
-    type: object
-    properties:
-      effektivzinssatz:
-        $ref: '#/definitions/prozent'
-      sollzinssatz:
-        $ref: '#/definitions/prozent'
-      gesamtbetrag:
-        description: Auszahlungsbetrag + Versicherungsprämie + Kreditzinsen
-        $ref: '#/definitions/euro'
-      nettokreditbetrag:
-        description: Auszahlungsbetrag + Versicherungsprämie
-        $ref: '#/definitions/euro'
-      auszahlungsbetrag:
-        description: Kreditbetrag
-        $ref: '#/definitions/euro'
-      laufzeitInMonaten:
-        type: integer
-      rateProMonat:
-        $ref: '#/definitions/euro'
-      vertragsbeginn:
-        type: string
-        format: date
-    required:
-      - effektivzinssatz
-      - sollzinssatz
-      - gesamtbetrag
-      - nettokreditbetrag
-      - auszahlungsbetrag
-      - laufzeitInMonaten
-      - rateProMonat
-      - vertragsbeginn
-
   kredit:
     type: object
     properties:
+      vertragsbeginn:
+        type: string
+        format: date
       effektivzinssatz:
         $ref: '#/definitions/prozent'
       sollzinssatz:
@@ -1207,6 +1163,7 @@ definitions:
         items:
           $ref: '#/definitions/versicherungsrisiken'
       versicherer:
+        description: ID eines Produktanbieters
         type: string
     required:
       - basisFuerDieProvisionsermittlung
@@ -1221,50 +1178,6 @@ definitions:
     enum:
       - VERSICHERUNGS_PRAEMIE_NETTO
       - VERSICHERUNGS_PRAEMIE_BRUTTO
-
-  sparphase:
-    type: object
-    properties:
-      sparbeitragMonatlich:
-        $ref: '#/definitions/euro'
-      dauerInMonaten:
-        type: integer
-      guthabenBeiZuteilung:
-        $ref: '#/definitions/euro'
-      guthabenZinssatz:
-        $ref: '#/definitions/prozent'
-    required:
-      - sparbeitragMonatlich
-      - dauerInMonaten
-      - guthabenBeiZuteilung
-      - guthabenZinssatz
-
-  darlehensphase:
-    type: object
-    properties:
-      darlehenssumme:
-        $ref: '#/definitions/euro'
-      rateMonatlich:
-        $ref: '#/definitions/euro'
-      dauerInMonaten:
-        type: integer
-      sollzinsSatz:
-        $ref: '#/definitions/prozent'
-      effektivzinsSatz:
-        $ref: '#/definitions/prozent'
-      letzteRate:
-        $ref: '#/definitions/euro'
-      tilgungsende:
-        type: string
-        format: date
-    required:
-      - darlehenssumme
-      - rateMonatlich
-      - dauerInMonaten
-      - sollzinsSatz
-      - effektivzinsSatz
-      - letzteRate
-      - tilgungsende
 
   meldung:
     type: object
