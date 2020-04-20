@@ -904,8 +904,9 @@ definitions:
   ratenzahlungstermin:
     type: string
     enum:
-      - MEDIO
-      - ULTIMO
+      - MONATSANFANG
+      - MONATSMITTE
+      - MONATSENDE
 
   abzuloesenderRatenkredit:
     type: object
