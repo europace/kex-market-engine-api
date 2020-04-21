@@ -196,7 +196,7 @@ definitions:
       id:
         type: string
       haushaltspartnerId:
-        description: Antragsteller ID des Haushaltspartners
+        description: Antragsteller ID des Haushaltspartners.
         type: string
       persoenlicheAngaben:
         $ref: '#/definitions/persoenlicheAngaben'
@@ -290,6 +290,7 @@ definitions:
       - Prof. Dr.
       - Prof. Dr. med.
       - Prof. Dr. Dr.
+
   geschlecht:
     type: string
     enum:
@@ -857,10 +858,10 @@ definitions:
       ratenzahlungstermin:
         $ref: '#/definitions/ratenzahlungstermin'
       laufzeitInMonaten:
-        description: laufzeitInMonaten oder rateProMonat wird übermittelt
+        description: laufzeitInMonaten oder rateProMonat wird übermittelt.
         type: integer
       rateProMonat:
-        description: laufzeitInMonaten oder rateProMonat wird übermittelt
+        description: laufzeitInMonaten oder rateProMonat wird übermittelt.
         $ref: '#/definitions/euro'
     required:
       - auszahlungsbetrag
@@ -1013,7 +1014,7 @@ definitions:
     type: object
     properties:
       produktanbieter:
-        description: ID eines Produktanbieters wie in der Anfrage unter handelsbeziehung.produktanbieter angegeben. Ordnet das Angebot dem angefragtem Produktanbieter zu.
+        description: ID eines Produktanbieters, wie in der Anfrage unter handelsbeziehung.produktanbieter angegeben. Ordnet das Angebot dem angefragtem Produktanbieter zu.
         type: string
       referenznummerProduktanbieter:
         type: string

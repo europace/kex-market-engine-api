@@ -42,7 +42,7 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 | Meldungskategorie  | Beschreibung |
 |--------|--------|
 | MACHBARKEIT | Der Antrag wird abgelehnt. | 
-| VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung, um fehlende Angaben ergänzt werden. | 
+| VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung um fehlende Angaben ergänzt werden. | 
 | HINWEIS | Hinweis an den Vermittler. | 
 | ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
@@ -54,7 +54,7 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
 ### Tilgungsplan
-in der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
+In der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
 
 ## Beispiele
 
