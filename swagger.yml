@@ -155,8 +155,8 @@ definitions:
   handelsbeziehung:
     type: object
     properties:
-      description: ID eines Produktanbieters. Wird im Europace-Partnermanagement an der Plakette des Produktanbieters gepflegt.
       produktanbieter:
+        description: ID eines Produktanbieters. Wird im Europace-Partnermanagement an der Plakette des Produktanbieters gepflegt.
         type: string
       kreditProvisionswunsch:
         $ref: '#/definitions/prozent'
