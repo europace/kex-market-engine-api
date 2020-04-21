@@ -19,6 +19,8 @@ Die Schnittstelle ermöglicht die Annahme von Ratenkredit-Angeboten.
 # Table of Contents
 
 * [API Version](#api-version)
+* [Response](#Response)
+* [Beispiele](#Beispiele)
 
 ## API Version
 

@@ -252,3 +252,218 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
 
 Der Tilgungsplan ist teilweise gekürzt dargestellt.   
 
+```json
+{
+  "angebot": {
+    "produktanbieter": "MUSTERBANK",
+    "referenznummerProduktanbieter": "XVG456",
+    "referenznummerDienstleister": null,
+    "produktbezeichnung": "Top Ratenkredit",
+    "produktart": "RATENKREDIT",
+    "angebotsvariantentyp": "eyJhbmdlYm90c1ZhcmlhbnRlblR5cCI6eyJhbmdlYm90c1ZhcmlhbnRlblR5cCI6IlBST0RVS1RfSUQiLCJwcm9kdXplbnQiOiJTUElUWkVOQkFOSyJ9fQ==",
+    "kredit": {
+      "vertragsbeginn": "2020-05-01",
+      "effektivzinssatz": 0.0082,
+      "sollzinssatz": 0.0079,
+      "gesamtbetrag": 9500.0,
+      "nettokreditbetrag": 7500.0,
+      "auszahlungsbetrag": 7000.0,
+      "laufzeitInMonaten": 84,
+      "rateProMonat": 110.01,
+      "letzteRate": 108.87,
+      "provisionsbetrag": 210.0,
+      "basisbetragFuerDieProvisionsermittlung": 10500.0,
+      "vorlaufzinsenProTag": 1.37,
+      "versicherung": {
+        "basisFuerDieProvisionsermittlung": "VERSICHERUNGS_PRAEMIE_NETTO",
+        "provisionsbetrag": 50,
+        "praemieBrutto": 500.0,
+        "praemieNetto": 500.0,
+        "risiken": [
+          {
+            "antragstellerId": "eb51059a-ab2d-4253-9a7b-61864ae17123",
+            "tod": true,
+            "arbeitsunfaehigkeit": true,
+            "arbeitslosigkeit": false
+          }
+        ],
+        "versicherer": "VERSICHERUNGS_AG"
+      }
+    },
+    "status": {
+      "machbarkeitsstatus": "MACHBAR",
+      "angepasst": true
+    },
+    "meldungen": [
+      {
+        "kategorie": "ANPASSUNG",
+        "text": "Der Provisionswunsch wurde angepasst.",
+        "code": "bank.anpassung.provision"
+      },
+      {
+        "kategorie": "ANPASSUNG",
+        "text": "Die Laufzeit wurde angepasst.",
+        "code": "bank.anpassung.laufzeit"
+      }
+    ],
+    "unterlagen": [
+      {
+        "code": "bank.unterlage.gehaltsnachweis",
+        "text": "Bitte legen Sie die Gehaltsnachweise der letzten 3 Monate vor.",
+        "referenz": {
+          "id": "eb51059a-ab2d-4253-9a7b-61864ae17123",
+          "art": "ANTRAGSTELLER"
+        }
+      },
+      {
+        "code": "bank.unterlage.selbstauskunft",
+        "text": "Bitte legen Sie die Selbstauskunft vor.",
+        "referenz": null
+      }
+    ],
+    "bonitaetscheck": {
+        "name": "Haushaltsrechnung",
+        "ueberschrift": "Musterbank",
+        "ueberschuss": 10.0,
+        "bloecke": [
+          {
+            "zeilen": [
+              {
+                "hervorgehoben": false,
+                "label": "Unselbständiges Nettoeinkommen",
+                "wert": 1989.84
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Einkünfte aus Nebentätigkeit",
+                "wert": 400.0
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Kindesunterhalt",
+                "wert": 395.12
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Kindergeld",
+                "wert": 408.0
+              }
+            ],
+            "titel": "Einnahmen",
+            "innerBlock": {
+              "zeilen": [
+                {
+                  "hervorgehoben": true,
+                  "label": "Summe Einnahmen",
+                  "wert": 3192.96
+                }
+              ],
+              "hervorgehoben": true
+            }
+          },
+          {
+            "zeilen": [
+              {
+                "hervorgehoben": false,
+                "label": "Lebenshaltungskosten",
+                "wert": 1750.49
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Mietausgaben",
+                "wert": 1081.51
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Kreditraten",
+                "wert": 175.95
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Sonstige Ausgaben",
+                "wert": 65.0
+              },
+              {
+                "hervorgehoben": false,
+                "label": "Rate der Finanzierung",
+                "wert": 110.01
+              }
+            ],
+            "titel": "Ausgaben",
+            "innerBlock": {
+              "zeilen": [
+                {
+                  "hervorgehoben": true,
+                  "label": "Summe Ausgaben",
+                  "wert": 3182.96
+                }
+              ],
+              "hervorgehoben": true
+            }
+          },
+          {
+            "zeilen": null,
+            "titel": "Überschuss / Fehlbetrag",
+            "innerBlock": {
+              "zeilen": [
+                {
+                  "hervorgehoben": true,
+                  "label": "Überschuss",
+                  "wert": 10.0
+                }
+              ],
+              "hervorgehoben": true
+            }
+          }
+        ]
+      },
+      "tilgungsplan": {
+        "eintraege": [
+          {
+            "jahr": 2020,
+            "monat": 5,
+            "zahlung": -7000.0,
+            "zinsen": 0.0,
+            "tilgung": 0.0,
+            "saldo": -7000.0
+          },
+          {
+            "jahr": 2020,
+            "monat": 6,
+            "zahlung": 110.01,
+            "zinsen": 46.20,
+            "tilgung": 63.81,
+            "saldo": -6939.19
+          },
+          {
+            "jahr": 2020,
+            "monat": 7,
+            "zahlung": 110.01,
+            "zinsen": 45.78,
+            "tilgung": 64.23,
+            "saldo": -6874.96
+          },
+          ...
+          {
+            "jahr": 2021,
+            "monat": null,
+            "zahlung": 1320.12,
+            "zinsen": 543.12,
+            "tilgung": 777.00,
+            "saldo": -6097.96
+          }
+          ...
+        ],
+        "schlusswerte": {
+          "zahlung": 9240.84,
+          "zinsen": 2000.0,
+          "tilgung": 7000.00,
+          "saldo": 0.0
+        }
+      },
+      "maximalerAuszahlungsbetrag": 7100
+     }
+    ]
+  }
+  ```
+
