@@ -19,7 +19,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
     {
       "id": "eb51059a-ab2d-4253-9a7b-61864ae17123",
       "persoenlicheAngaben": {
-        "anrede": "FRAU",
+        "geschlecht": "WEIBLICH",
         "vorname": "Antonia",
         "nachname": "Meise",
         "geburtsdatum": "1980-03-02",
@@ -181,7 +181,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
       "ratenzahlungstermin": "MONATSENDE",
       "laufzeitInMonaten": 72
     },
-    "versicherungsWunsch": [
+    "versicherungswunsch": [
       {
         "antragstellerId": "eb51059a-ab2d-4253-9a7b-61864ae17123",
         "tod": true,
@@ -236,7 +236,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
   },
   "handelsbeziehung": {
       "produktanbieter": "BEISPIEL_BANK",
-      "kreditProvisionswunsch": 0.0123,
+      "kreditprovisionswunsch": 0.0123,
       "vertriebsgruppe": "Beispielgruppe",
       "partnerkennzeichen": [
         {

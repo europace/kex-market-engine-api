@@ -158,7 +158,7 @@ definitions:
       produktanbieter:
         description: ID eines Produktanbieters. Wird im Europace-Partnermanagement an der Plakette des Produktanbieters gepflegt.
         type: string
-      kreditProvisionswunsch:
+      kreditprovisionswunsch:
         $ref: '#/definitions/prozent'
       vertriebsgruppe:
         description: Wird vom Produktanbieter definiert um im Europace-Partnermanagement an der Handelsbeziehung gepflegt.
@@ -835,7 +835,7 @@ definitions:
     properties:
       kreditwunsch:
         $ref: '#/definitions/kreditwunsch'
-      versicherungsWunsch:
+      versicherungswunsch:
         type: array
         items:
           $ref: '#/definitions/versicherungsrisiken'
@@ -1025,7 +1025,7 @@ definitions:
       produktart:
         $ref: '#/definitions/produktart'
       angebotsvariantentyp:
-        description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
+        description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können.
         type: string
       kredit:
         $ref: '#/definitions/kredit'
