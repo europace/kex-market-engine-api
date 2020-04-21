@@ -161,6 +161,7 @@ definitions:
       kreditProvisionswunsch:
         $ref: '#/definitions/prozent'
       vertriebsgruppe:
+        description: Wird vom Produktanbieter definiert um im Europace-Partnermanagement an der Handelsbeziehung gepflegt.
         type: string
       partnerkennzeichen:
         description: Key-/Value-Pairs aus dem Europace-Partnermanagement. Zum Beispiel Vermittlernummern.
@@ -519,30 +520,14 @@ definitions:
   bonitaetsangaben:
     type: object
     properties:
-      ausgaben:
-        $ref: '#/definitions/ausgaben'
       einnahmen:
         $ref: '#/definitions/einnahmen'
+      ausgaben:
+        $ref: '#/definitions/ausgaben'
       vermoegen:
         $ref: '#/definitions/vermoegen'
       nichtAbzuloesendeVerbindlichkeiten:
         $ref: '#/definitions/nichtAbzuloesendeVerbindlichkeiten'
-
-  ausgaben:
-    type: object
-    properties:
-      krankenversicherungsbeitraege:
-        $ref: '#/definitions/euro'
-      eigenmieteInklusiveNebenkosten:
-        $ref: '#/definitions/euro'
-      unterhalt:
-        $ref: '#/definitions/euro'
-      lebensversicherungsbeitraege:
-        $ref: '#/definitions/euro'
-      bauspardarlehensrate:
-        $ref: '#/definitions/euro'
-      sonstigeAusgaben:
-        $ref: '#/definitions/euro'
 
   einnahmen:
     type: object
@@ -625,6 +610,22 @@ definitions:
       vorZweiJahren:
         $ref: '#/definitions/euro'
       vorDreiJahren:
+        $ref: '#/definitions/euro'
+
+  ausgaben:
+    type: object
+    properties:
+      krankenversicherungsbeitraege:
+        $ref: '#/definitions/euro'
+      eigenmieteInklusiveNebenkosten:
+        $ref: '#/definitions/euro'
+      unterhalt:
+        $ref: '#/definitions/euro'
+      lebensversicherungsbeitraege:
+        $ref: '#/definitions/euro'
+      bauspardarlehensrate:
+        $ref: '#/definitions/euro'
+      sonstigeAusgaben:
         $ref: '#/definitions/euro'
 
   vermoegen:

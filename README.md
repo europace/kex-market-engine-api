@@ -42,7 +42,7 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 | MACHBARKEIT | Der Antrag wird abgelehnt. | 
 | VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung, um fehlende Angaben ergänzt werden. | 
 | HINWEIS | Hinweis an den Vermittler. | 
-| ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Provision. | 
+| ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
 ### Machbarkeitsstatus
 | Machbarkeitsstatus  | Beschreibung |
@@ -50,3 +50,11 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 | MACHBAR | Dem Antrag kann entsprochen werden. | 
 | MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
+
+### Tilgungsplan
+in der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
+
+## Beispiele
+
+* [Annahme](beispiele/example-annahme.md)
+
