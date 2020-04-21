@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Market Engine-API
+  title: KEX Market Engine API
 basePath: /v1
 schemes:
   - http
@@ -38,7 +38,7 @@ definitions:
     type: object
     properties:
       traceId:
-        description: zur Nachverfolgung von Anfragen über mehrere Services hinweg - bitte in Ihre Log-Einträge aufnehmen.
+        description: Zur Nachverfolgung von Anfragen über mehrere Services hinweg - bitte in Ihre Log-Einträge aufnehmen.
         type: string
       vorgangsnummer:
         description: Identifiziert einen Europace-Vorgang.
@@ -75,7 +75,7 @@ definitions:
             description: Identifiziert einen Europace-Antrag.
             type: string
           angebotsvariantentyp:
-            description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
+            description: Token, dass dazu dient das gewünschte Produkt identifizieren zu können. Format ist frei wählbar - der Inhalt wird von Europace nicht semantisch interpretiert. Kann z.B. enthalten - Produktanbieter, Produkt-ID.
             type: string
           bearbeiter:
             $ref: '#/definitions/bearbeiter'
@@ -112,8 +112,10 @@ definitions:
     type: object
     properties:
       partnerId:
+        description: Die PartnerId ist 5-stellig und identifiziert eine Plakette aus dem Europace-Partnermanagement.
         type: string
       vertriebsorganisationsId:
+        description: Wird im Europace-Partnermanagement gepflegt.
         type: string
       firma:
         type: string
@@ -153,21 +155,22 @@ definitions:
   handelsbeziehung:
     type: object
     properties:
-      description: ID eines Produktanbieters
+      description: ID eines Produktanbieters. Wird im Europace-Partnermanagement an der Plakette des Produktanbieters gepflegt.
       produktanbieter:
         type: string
       kreditProvisionswunsch:
         $ref: '#/definitions/prozent'
       vertriebsgruppe:
         type: string
-      partnerKennzeichen:
+      partnerkennzeichen:
+        description: Key-/Value-Pairs aus dem Europace-Partnermanagement. Zum Beispiel Vermittlernummern.
         type: array
         items:
-          $ref: '#/definitions/partnerKennzeichen'
+          $ref: '#/definitions/partnerkennzeichen'
     required:
       - produktanbieter
 
-  partnerKennzeichen:
+  partnerkennzeichen:
     type: object
     additionalProperties:
       type: object
@@ -310,7 +313,7 @@ definitions:
         $ref: '#/definitions/beschaeftigungsverhaeltnis'
       befristet:
         $ref: '#/definitions/beschaeftigungsbefristung'
-      beschaeftigungsBeginn:
+      beschaeftigungsbeginn:
         type: string
         format: date
       befristetBis:
@@ -374,10 +377,10 @@ definitions:
 
   vorherigeBeschaeftigung:
     properties:
-      beschaeftigungsBeginn:
+      beschaeftigungsbeginn:
         type: string
         format: date
-      beschaeftigungsEnde:
+      beschaeftigungsende:
         type: string
         format: date
       arbeitgeber:
@@ -1031,6 +1034,7 @@ definitions:
         items:
           $ref: '#/definitions/meldung'
       unterlagen:
+        description: Liste der einzureichenden Dokumente.
         type: array
         items:
           $ref: '#/definitions/unterlage'
@@ -1091,7 +1095,7 @@ definitions:
       machbarkeitsstatus:
         $ref: '#/definitions/machbarkeitsstatus'
       angepasst:
-        description: true wenn der Kredit- oder Versicherungswunsch des Antragstellers angepasst wurde.
+        description: true wenn der Kredit- oder Versicherungswunsch des Antragstellers angepasst wurde. In diesem Falle sollte es entsprechende Anpassungsmeldungen (Kategorie ANPASSUNG) geben.
         type: boolean
     required:
       - machbarkeitsstatus
@@ -1168,7 +1172,7 @@ definitions:
         items:
           $ref: '#/definitions/versicherungsrisiken'
       versicherer:
-        description: ID eines Produktanbieters
+        description: ID eines Produktanbieters.
         type: string
     required:
       - basisFuerDieProvisionsermittlung
@@ -1229,6 +1233,7 @@ definitions:
       sichtbarFuerVertrieb:
         type: boolean
       sichtbarFuerProduktanbieter:
+        description: Zum Beispiel zum Ausschluss von Dokumenten vom Dokumente-Upload.
         type: boolean
 
   tilgungsplan:
@@ -1345,13 +1350,16 @@ definitions:
     type: number
     description: Euro-Betrag mit bis zu 2 Nachkommastellen
     format: 'xxx.xx'
+    example: 10000.00
 
   prozent:
     type: number
     description: 1 basierter Prozentwert mit bis zu 4 Nachkommastellen
     format: 'x.xxxx'
+    example: 0.0257
 
   land:
     type: string
     description: Land als ISO 3166-1 alpha-2 Code (nur Grossbuchstaben)
     pattern: '^[A-Z]{2}$'
+    example: DE

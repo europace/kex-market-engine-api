@@ -33,3 +33,20 @@ und ist in der [Swagger Definition](https://github.com/europace/kex-market-engin
 3. die `PATCH` Version wird erhöht, wenn die API gleich bleibt, jedoch die Swagger Definition angepasst wird (z.B. Erweiterung oder Anpassung von Beschreibungen in der API)
 
 Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/europace/kex-market-engine-api/releases) zu finden.
+
+## Response
+
+### Meldungskategorie
+| Meldungskategorie  | Beschreibung |
+|--------|--------|
+| MACHBARKEIT | Der Antrag wird abgelehnt. | 
+| VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung, um fehlende Angaben ergänzt werden. | 
+| HINWEIS | Hinweis an den Vermittler. | 
+| ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Provision. | 
+
+### Machbarkeitsstatus
+| Machbarkeitsstatus  | Beschreibung |
+|--------|--------|
+| MACHBAR | Dem Antrag kann entsprochen werden. | 
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
+| NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
