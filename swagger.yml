@@ -318,12 +318,18 @@ definitions:
         format: date
       beruf:
         type: string
+      arbeitgeber:
+        $ref: '#/definitions/arbeitgeber'
       branche:
         $ref: '#/definitions/branche'
+
+  arbeitgeber:
+    type: object
+    properties:
+      name:
+        type: string
       anschrift:
         $ref: '#/definitions/adresse'
-      arbeitgebername:
-        type: string
 
   beschaeftigungsverhaeltnis:
     type: string
@@ -374,10 +380,8 @@ definitions:
       beschaeftigungsEnde:
         type: string
         format: date
-      anschrift:
-        $ref: '#/definitions/adresse'
-      arbeitgebername:
-        type: string
+      arbeitgeber:
+        $ref: '#/definitions/arbeitgeber'
 
   derzeitigeWohnsituation:
     type: object
