@@ -1,3 +1,5 @@
+# ⚠ HINWEIS: Diese API befindet sich aktuell in der Entwicklung und eignet sich noch nicht zum produktiven Einsatz!
+
 # kex-market-engine-api
 API zur Anbindung von Produktanbietern im Ratenkreditgeschäft.
 
