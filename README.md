@@ -19,6 +19,8 @@ Die Schnittstelle ermöglicht die Annahme von Ratenkredit-Angeboten.
 # Table of Contents
 
 * [API Version](#api-version)
+* [Response](#Response)
+* [Beispiele](#Beispiele)
 
 ## API Version
 
@@ -33,3 +35,28 @@ und ist in der [Swagger Definition](https://github.com/europace/kex-market-engin
 3. die `PATCH` Version wird erhöht, wenn die API gleich bleibt, jedoch die Swagger Definition angepasst wird (z.B. Erweiterung oder Anpassung von Beschreibungen in der API)
 
 Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/europace/kex-market-engine-api/releases) zu finden.
+
+## Response
+
+### Meldungskategorie
+| Meldungskategorie  | Beschreibung |
+|--------|--------|
+| MACHBARKEIT | Der Antrag wird abgelehnt. | 
+| VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung um fehlende Angaben ergänzt werden. | 
+| HINWEIS | Hinweis an den Vermittler. | 
+| ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
+
+### Machbarkeitsstatus
+| Machbarkeitsstatus  | Beschreibung |
+|--------|--------|
+| MACHBAR | Dem Antrag kann entsprochen werden. | 
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
+| NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
+
+### Tilgungsplan
+In der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
+
+## Beispiele
+
+* [Annahme](beispiele/example-annahme.md)
+
