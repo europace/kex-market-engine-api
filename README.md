@@ -1,9 +1,9 @@
 # ⚠ HINWEIS: Diese API befindet sich aktuell in der Entwicklung und eignet sich noch nicht zum produktiven Einsatz!
 
 # kex-market-engine-api
-API zur Anbindung von Produktanbietern im Ratenkreditgeschäft.
+Die API ermöglicht es Produktanbietern (im Ratenkreditgeschäft), Services mit standardisierter API zu implementieren, mit dem Ziel sich an die Europace-Plattform anzubinden.
 
-Die Schnittstelle ermöglicht die Annahme von Ratenkredit-Angeboten.
+![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
 > :warning: Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir 
 > von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h. 
@@ -38,9 +38,18 @@ und ist in der [Swagger Definition](https://github.com/europace/kex-market-engin
 
 Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/europace/kex-market-engine-api/releases) zu finden.
 
-## Response
+## Annahme
 
-### Meldungskategorie
+Die Annahme eines Antrags beinhaltet: 
+- die Ermittlung der Konditionen (inkl. Tilgungsplan),
+- die Ermittlung einzureichender Unterlagen, 
+- die Prüfung der Bonität der Antragsteller 
+- ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa) sowie
+- die Erstellung der Vertragsdokumente.
+
+### Response
+
+#### Meldungskategorie
 | Meldungskategorie  | Beschreibung |
 |--------|--------|
 | MACHBARKEIT | Der Antrag wird abgelehnt. | 
@@ -48,17 +57,17 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 | HINWEIS | Hinweis an den Vermittler. | 
 | ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
-### Machbarkeitsstatus
+#### Machbarkeitsstatus
 | Machbarkeitsstatus  | Beschreibung |
 |--------|--------|
 | MACHBAR | Dem Antrag kann entsprochen werden. | 
 | MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
-### Tilgungsplan
+#### Tilgungsplan
 In der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
 
-## Beispiele
+### Beispiele
 
 * [Annahme](beispiele/example-annahme.md)
 
