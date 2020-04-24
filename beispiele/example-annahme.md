@@ -456,7 +456,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
         ],
         "schlusswerte": {
           "zahlung": 9240.84,
-          "zinsen": 2000.0,
+          "zinsen": 2240.84,
           "tilgung": 7000.00,
           "saldo": 0.0
         },
