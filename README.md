@@ -21,7 +21,7 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 # Table of Contents
 
 * [API Version](#api-version)
-* [Response](#Response)
+* [Annahme](#Annahme)
 * [Beispiele](#Beispiele)
 
 ## API Version
@@ -47,6 +47,10 @@ Die Annahme eines Antrags beinhaltet:
 - ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa) sowie
 - die Erstellung der Vertragsdokumente.
 
+### Performance
+
+Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner z.B. Vertriebe derart, dass sie aus deren unternehmerischer Sicht hinderlich ist.
+
 ### Response
 
 #### Meldungskategorie
@@ -64,7 +68,7 @@ Die Annahme eines Antrags beinhaltet:
 | MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
-### Beispiele
+## Beispiele
 
 * [Annahme](beispiele/example-annahme.md)
 
