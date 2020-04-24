@@ -64,9 +64,6 @@ Die Annahme eines Antrags beinhaltet:
 | MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
-#### Tilgungsplan
-In der Regel werden die Zahlungsperioden nur während des ersten (und ggf. des letzten) Jahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
-
 ### Beispiele
 
 * [Annahme](beispiele/example-annahme.md)
