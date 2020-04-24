@@ -1242,10 +1242,12 @@ definitions:
     type: object
     properties:
       eintraege:
+        description: In der Regel werden die Zahlungsperioden nur während des ersten Kalenderjahres monatlich ausgewiesen. Die folgenden Perioden werden auf Jahresebene aggregiert, um den Tilgungsplan kurz zu halten.
         type: array
         items:
           $ref: '#/definitions/tilgungsplanEintrag'
       schlusswerte:
+        description: Enthält den Restsaldo sowie für Zahlung, Zinsen und Tilgung die Summen über den gesamten Tilgungsplan. Monat und Jahr werden nicht erwartet.
         $ref: '#/definitions/tilgungsplanEintrag'
     required:
       - eintraege
