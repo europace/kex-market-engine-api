@@ -260,6 +260,8 @@ definitions:
         format: date
       geburtsort:
         type: string
+      geburtsland:
+        $ref: '#/definitions/land'
       geburtsname:
         type: string
       staatsangehoerigkeit:
