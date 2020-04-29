@@ -443,7 +443,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             "tilgung": 64.23,
             "saldo": -6874.96
           },
-          ...
+//          ...
           {
             "jahr": 2021,
             "monat": null,
@@ -452,18 +452,29 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             "tilgung": 777.00,
             "saldo": -6097.96
           }
-          ...
+//          ...
         ],
         "schlusswerte": {
           "zahlung": 9240.84,
-          "zinsen": 2000.0,
+          "zinsen": 2240.84,
           "tilgung": 7000.00,
           "saldo": 0.0
-        }
+        },
       },
       "maximalerAuszahlungsbetrag": 7100
+     },
+  "dokumente": [
+     {
+       "bezeichnung": "Darlehensvertrag",
+       "dateiname": "Darlehensvertrag.pdf",
+       "base64pdf": "foobar8765436765765454565675",
+       "sichtbarkeit": {
+         "sichtbarFuerVertrieb": true,
+         "sichtbarFuerProduktAnbieter": true
+       }
      }
     ]
   }
+}
   ```
 
