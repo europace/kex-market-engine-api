@@ -1034,6 +1034,7 @@ definitions:
       status:
         $ref: '#/definitions/angebotsstatus'
       meldungen:
+        description: Meldungen werden dem Vermittler angezeigt, um ihn im Beratungsprozess zu unterstützen.
         type: array
         items:
           $ref: '#/definitions/meldung'

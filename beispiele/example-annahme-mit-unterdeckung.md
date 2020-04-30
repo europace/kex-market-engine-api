@@ -24,6 +24,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
         "nachname": "Meise",
         "geburtsdatum": "1980-03-02",
         "geburtsort": "Berlin",
+        "geburtsland": "DE",
         "staatsangehoerigkeit": "DE",
         "familienstand": "LEDIG",
         "anzahlPersonenImHaushalt": 3
@@ -291,8 +292,8 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
       }
     },
     "status": {
-      "machbarkeitsstatus": "MACHBAR",
-      "angepasst": true
+      "machbarkeitsstatus": "NICHT_MACHBAR",
+      "angepasst": false
     },
     "meldungen": [
       {
@@ -301,9 +302,9 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
         "code": "bank.anpassung.provision"
       },
       {
-        "kategorie": "ANPASSUNG",
-        "text": "Die Laufzeit wurde angepasst.",
-        "code": "bank.anpassung.laufzeit"
+        "kategorie": "MACHBARKEIT",
+        "text": "Der Bonitätscheck weist einen zu geringen Betrag aus.",
+        "code": "bank.machbarkeit.bonitaet.unterdeckung"
       }
     ],
     "unterlagen": [
@@ -331,7 +332,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
               {
                 "hervorgehoben": false,
                 "label": "Unselbständiges Nettoeinkommen",
-                "wert": 1989.84
+                "wert": 1969.84
               },
               {
                 "hervorgehoben": false,
@@ -408,8 +409,8 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
               "zeilen": [
                 {
                   "hervorgehoben": true,
-                  "label": "Überschuss",
-                  "wert": 10.0
+                  "label": "Fehlbetrag",
+                  "wert": -10.0
                 }
               ],
               "hervorgehoben": true
@@ -462,18 +463,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
         },
       },
       "maximalerAuszahlungsbetrag": 7100
-     },
-  "dokumente": [
-     {
-       "bezeichnung": "Darlehensvertrag",
-       "dateiname": "Darlehensvertrag.pdf",
-       "base64pdf": "foobar8765436765765454565675",
-       "sichtbarkeit": {
-         "sichtbarFuerVertrieb": true,
-         "sichtbarFuerProduktAnbieter": true
-       }
      }
-    ]
   }
 }
   ```
