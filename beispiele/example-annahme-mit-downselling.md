@@ -466,7 +466,5 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
        }
      }
     ]
-  }
 }
   ```
-
