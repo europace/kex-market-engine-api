@@ -464,7 +464,5 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
       },
       "maximalerAuszahlungsbetrag": 7100
      }
-  }
 }
   ```
-
