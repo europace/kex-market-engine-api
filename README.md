@@ -54,7 +54,7 @@ Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich hö
 
 ### Request
 
-Während der Angebotsermittlung wird bereits sichergestellt dass die Antragsdaten vollständig sind. Davon ungeachtet muss der Service mit fehlenden Daten in der Form umgehen können, dass sie nicht zu einem technischen Fehler führen. 
+Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Davon ungeachtet muss der Service mit fehlenden Daten in der Form umgehen können, dass sie nicht zu einem technischen Fehler führen. 
 
 ### Response
 
@@ -96,4 +96,3 @@ Ist ein Downselling nicht möglich. wird ein Angebot (ohne Dokument(e) mit dem S
 * [Annahme mit fehlenden Daten](beispiele/example-annahme-mit-fehlenden-daten.md)
 * [Annahme mit Unterdeckung](beispiele/example-annahme-mit-unterdeckung.md)
 * [Annahme mit Downselling](beispiele/example-annahme-mit-downselling.md)
-
