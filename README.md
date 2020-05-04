@@ -52,9 +52,29 @@ Die Annahme eines Antrags beinhaltet:
 
 Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner z.B. Vertriebe derart, dass sie aus deren unternehmerischer Sicht hinderlich ist.
 
+### Request
+
+Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Davon ungeachtet muss der Service mit fehlenden Daten in der Form umgehen können, dass sie nicht zu einem technischen Fehler führen. 
+
 ### Response
 
+Grundsätzlich wird eine Antwort mit einem vollständigen Angebot und HTTP-Statuscode 200 erwartet. Wenn das Angebot MACHBAR ist, wird mindestens ein Dokument erwartet.
+Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode 500 erwartet. Die Antowrt muss kein Angebot enthalten, aber einen Hinweis auf die Fehlerursache im Rahmen einer supportMeldung.
+
+#### Umgang mit unvollständigen Anfragen
+
+Es wird ein vollständiges Angebot ohne Dokument(e) erwartet. Der Machbarkeitsstatus ist NICHT_MACHBAR. Vollständigkeitsmeldungen sind vorhanden und weisen auf die fehlenden Angaben hin.
+
+#### Umgang mit einer Unterdeckung in der Haushaltsrechnung
+
+Ist der Antrag aufgrund einer Haushaltsunterdeckung nicht machbar, erfolgt im Idealfall eine Verlängerung der Laufzeit. Ist dies nicht möglich, kann ein Downselling des Auszahlungsbetrags erfolgen.
+
+Führt das Downselling zu einem machbaren Angebot, wird dieses als angepasst = true markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu informieren. 
+
+Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status NICHT_MACHBAR und mindestens einer entsprechenden Machbarkeitsmeldung erwartet.
+
 #### Meldungskategorie
+
 | Meldungskategorie  | Beschreibung |
 |--------|--------|
 | MACHBARKEIT | Der Antrag wird abgelehnt. | 
@@ -63,13 +83,16 @@ Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich hö
 | ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
 #### Machbarkeitsstatus
+
 | Machbarkeitsstatus  | Beschreibung |
 |--------|--------|
 | MACHBAR | Dem Antrag kann entsprochen werden. | 
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. | 
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. Produktanbieter und Vermittler müssen den Antrag nachverhandeln.| 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
 ## Beispiele
 
-* [Annahme](beispiele/example-annahme.md)
-
+* [Annahme erfolgreich](beispiele/example-annahme-erfolgreich.md)
+* [Annahme mit fehlenden Daten](beispiele/example-annahme-mit-fehlenden-daten.md)
+* [Annahme mit Unterdeckung](beispiele/example-annahme-mit-unterdeckung.md)
+* [Annahme mit Downselling](beispiele/example-annahme-mit-downselling.md)
