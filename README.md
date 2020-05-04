@@ -1,7 +1,7 @@
 # ⚠ HINWEIS: Diese API befindet sich aktuell in der Entwicklung und eignet sich noch nicht zum produktiven Einsatz!
 
 # kex-market-engine-api
-Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierter Schnittstelle an die Europace Plattform anzubinden.
+Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierten Schnittstellen an die Europace Plattform anzubinden.
 Services, die die API implementieren, erwarten einen POST-Request mit einem JSON-Dokument als Request-Body.
 
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
@@ -19,7 +19,7 @@ Services, die die API implementieren, erwarten einen POST-Request mit einem JSON
 
 <!-- https://opensource.zalando.com/restful-api-guidelines/#108 -->
 
-# Table of Contents
+# Inhaltsverzeichnis
 
 * [API Version](#api-version)
 * [Annahme](#Annahme)
@@ -27,7 +27,7 @@ Services, die die API implementieren, erwarten einen POST-Request mit einem JSON
 
 ## API Version
 
-Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
+Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/), hat das Format
 
 `MAJOR.MINOR.PATCH`
 
@@ -50,20 +50,20 @@ Die Annahme eines Antrags beinhaltet:
 
 ### Performance
 
-Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner z.B. Vertriebe derart, dass sie aus deren unternehmerischer Sicht hinderlich ist.
+Wir erwarten die Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner, z.B. Vertriebe.
 
 ### Request
 
-Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Davon ungeachtet muss der Service mit fehlenden Daten in der Form umgehen können, dass sie nicht zu einem technischen Fehler führen. 
+Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Dessen ungeachtet muss der Service mit fehlenden Daten umgehen können. Sie dürfen nicht zu einem technischen Fehler führen. 
 
 ### Response
 
 Grundsätzlich wird eine Antwort mit einem vollständigen Angebot und HTTP-Statuscode 200 erwartet. Wenn das Angebot MACHBAR ist, wird mindestens ein Dokument erwartet.
-Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode 500 erwartet. Die Antowrt muss kein Angebot enthalten, aber einen Hinweis auf die Fehlerursache im Rahmen einer supportMeldung.
+Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode 500 erwartet. Die Antwort muss kein Angebot enthalten, aber einen Hinweis auf die Fehlerursache als supportMeldung.
 
 #### Umgang mit unvollständigen Anfragen
 
-Es wird ein vollständiges Angebot ohne Dokument(e) erwartet. Der Machbarkeitsstatus ist NICHT_MACHBAR. Vollständigkeitsmeldungen sind vorhanden und weisen auf die fehlenden Angaben hin.
+Es wird ein vollständiges Angebot ohne Dokument(e) erwartet. Der Machbarkeitsstatus ist NICHT_MACHBAR. Es sind Vollständigkeitsmeldungen vorhanden, die auf die fehlenden Angaben hinweisen.
 
 #### Umgang mit einer Unterdeckung in der Haushaltsrechnung
 
@@ -71,7 +71,7 @@ Ist der Antrag aufgrund einer Haushaltsunterdeckung nicht machbar, erfolgt im Id
 
 Führt das Downselling zu einem machbaren Angebot, wird dieses als angepasst = true markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu informieren. 
 
-Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status NICHT_MACHBAR und mindestens einer entsprechenden Machbarkeitsmeldung erwartet.
+Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status NICHT_MACHBAR und mindestens einer entsprechenden Machbarkeitsmeldung erwartet. Laufzeit und Kreditbetrag sollten in diesem Fall der ursprünglichen Anfrage entsprechen.
 
 #### Meldungskategorie
 
