@@ -455,16 +455,16 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
       },
       "maximalerAuszahlungsbetrag": 7100
      },
-  "dokumente": [
-     {
-       "bezeichnung": "Darlehensvertrag",
-       "dateiname": "Darlehensvertrag.pdf",
-       "base64pdf": "foobar8765436765765454565675",
-       "sichtbarkeit": {
-         "sichtbarFuerVertrieb": true,
-         "sichtbarFuerProduktAnbieter": true
-       }
-     }
+    "dokumente": [
+       {
+         "bezeichnung": "Darlehensvertrag",
+         "dateiname": "Darlehensvertrag.pdf",
+         "base64pdf": "foobar8765436765765454565675",
+         "sichtbarkeit": {
+           "sichtbarFuerVertrieb": true,
+           "sichtbarFuerProduktAnbieter": true
+          }
+        }
     ]
 }
   ```
