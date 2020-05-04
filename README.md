@@ -71,7 +71,7 @@ Ist der Antrag aufgrund einer Haushaltsunterdeckung nicht machbar, erfolgt im Id
 
 Führt das Downselling zu einem machbaren Angebot, wird dieses als angepasst = true markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu informieren. 
 
-Ist ein Downselling nicht möglich. wird ein Angebot (ohne Dokument(e) mit dem Status NICHT_MACHBAR und mindestens einer entsprechenden Machbarkeitsmeldung erwartet.
+Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status NICHT_MACHBAR und mindestens einer entsprechenden Machbarkeitsmeldung erwartet.
 
 #### Meldungskategorie
 
