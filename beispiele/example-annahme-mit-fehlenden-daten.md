@@ -468,11 +468,10 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
           "zinsen": 2240.84,
           "tilgung": 7000.00,
           "saldo": 0.0
-        },
+        }
       },
       "maximalerAuszahlungsbetrag": 7100
      }
   }
 }
   ```
-
