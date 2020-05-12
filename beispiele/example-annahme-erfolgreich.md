@@ -133,7 +133,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
                         }
                     }
                 },
-                "ausgaben": {
+                "monatlicheAusgaben": {
                     "eigenmieteInklusiveNebenkosten": 1081.51,
                     "sonstigeAusgaben": 65
                 },
