@@ -525,7 +525,7 @@ definitions:
     properties:
       einnahmen:
         $ref: '#/definitions/einnahmen'
-      ausgaben:
+      monatlicheAusgaben:
         $ref: '#/definitions/ausgaben'
       vermoegen:
         $ref: '#/definitions/vermoegen'
