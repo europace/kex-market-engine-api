@@ -237,11 +237,9 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
         "produktanbieter": "BEISPIEL_BANK",
         "kreditprovisionswunsch": 0.0123,
         "vertriebsgruppe": "Beispielgruppe",
-        "partnerkennzeichen": [
-            {
-                "vermittlernummer": "5454874845"
-            }
-        ]
+        "partnerkennzeichen": {
+            "vermittlernummer": "5454874845"
+        }
     },
     "beratungsart": "AUSSER_GESCHAEFTSRAUM_VERTRAG"
 }

@@ -165,7 +165,7 @@ definitions:
         type: string
       partnerkennzeichen:
         description: Key-/Value-Pairs aus dem Europace-Partnermanagement. Zum Beispiel Vermittlernummern.
-        type: array
+        type: object
         items:
           $ref: '#/definitions/partnerkennzeichen'
     required:
