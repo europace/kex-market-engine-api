@@ -163,18 +163,8 @@ definitions:
       vertriebsgruppe:
         description: Wird vom Produktanbieter definiert um im Europace-Partnermanagement an der Handelsbeziehung gepflegt.
         type: string
-      partnerkennzeichen:
-        description: Key-/Value-Pairs aus dem Europace-Partnermanagement. Zum Beispiel Vermittlernummern.
-        type: array
-        items:
-          $ref: '#/definitions/partnerkennzeichen'
     required:
       - produktanbieter
-
-  partnerkennzeichen:
-    type: object
-    additionalProperties:
-      type: object
 
   ###
   ### Antragsteller
