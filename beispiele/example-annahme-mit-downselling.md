@@ -238,12 +238,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
     "handelsbeziehung": {
         "produktanbieter": "BEISPIEL_BANK",
         "kreditprovisionswunsch": 0.0123,
-        "vertriebsgruppe": "Beispielgruppe",
-        "partnerkennzeichen": [
-            {
-                "vermittlernummer": "5454874845"
-            }
-        ]
+        "vertriebsgruppe": "Beispielgruppe"
     },
     "beratungsart": "AUSSER_GESCHAEFTSRAUM_VERTRAG"
 }
