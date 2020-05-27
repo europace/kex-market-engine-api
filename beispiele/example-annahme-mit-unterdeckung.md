@@ -141,7 +141,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
                     "rueckkaufswertLebensversicherung": 741.51,
                     "immobilien": []
                 },
-                "nichtAbzuloesendeVerbindlichkeiten": {
+                "verbindlichkeiten": {
                     "ratenkredite": [
                         {
                             "id": "lkmjhuyg7-9876-gy6z-09ik-jihyf5anbhv65v",

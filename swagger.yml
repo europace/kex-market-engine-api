@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.1-alpha
+  version: 1.0.2-alpha
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -519,8 +519,8 @@ definitions:
         $ref: '#/definitions/ausgaben'
       vermoegen:
         $ref: '#/definitions/vermoegen'
-      nichtAbzuloesendeVerbindlichkeiten:
-        $ref: '#/definitions/nichtAbzuloesendeVerbindlichkeiten'
+      verbindlichkeiten:
+        $ref: '#/definitions/verbindlichkeiten'
 
   einnahmen:
     type: object
@@ -645,7 +645,7 @@ definitions:
       id:
         type: string
       art:
-        type: string
+        $ref: '#/definitions/immobilienart'
       verkehrswert:
         $ref: '#/definitions/euro'
       wohnflaeche:
@@ -655,14 +655,22 @@ definitions:
       nutzungsart:
         $ref: '#/definitions/immobiliennutzungsart'
 
+  immobilienart:
+    type: string
+      enum:
+        - EIGENTUMSWOHNUNG
+        - EINFAMILIENHAUS
+        - MEHRFAMILIENHAUS
+        - BUERO_GESCHAEFTSGEBAEUDE
+
   immobiliennutzungsart:
     type: string
-    enum:
-      - VERMIETET
-      - EIGENGENUTZT
-      - EIGENGENUTZT_UND_VERMIETET
+      enum:
+        - VERMIETET
+        - EIGENGENUTZT
+        - EIGENGENUTZT_UND_VERMIETET
 
-  nichtAbzuloesendeVerbindlichkeiten:
+  verbindlichkeiten:
     type: object
     properties:
       ratenkredite:
