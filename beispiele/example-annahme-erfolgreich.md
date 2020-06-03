@@ -418,6 +418,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                 {
                     "jahr": 2020,
                     "monat": 5,
+                    "tag": 15,
                     "zahlung": -7000,
                     "zinsen": 0,
                     "tilgung": 0,
@@ -426,6 +427,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                 {
                     "jahr": 2020,
                     "monat": 6,
+                    "tag": 15,
                     "zahlung": 110.01,
                     "zinsen": 46.2,
                     "tilgung": 63.81,
@@ -434,6 +436,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                 {
                     "jahr": 2020,
                     "monat": 7,
+                    "tag": 15,
                     "zahlung": 110.01,
                     "zinsen": 45.78,
                     "tilgung": 64.23,
@@ -443,6 +446,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                 {
                     "jahr": 2021,
                     "monat": null,
+                    "tag": null,
                     "zahlung": 1320.12,
                     "zinsen": 543.12,
                     "tilgung": 777,
