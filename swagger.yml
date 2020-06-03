@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.3-alpha
+  version: 1.0.4-alpha
   title: KEX Market Engine API
 basePath: /v1
 schemes:
