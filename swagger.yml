@@ -1009,10 +1009,10 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/dokument'
-      legitimationsverfahren:
+      identifikation:
         type: array
         items:
-          $ref: '#/definitions/legitimationsverfahren'
+          $ref: '#/definitions/identifikation'
 
   angebot:
     type: object
@@ -1243,7 +1243,7 @@ definitions:
         description: Zum Beispiel zum Ausschluss von Dokumenten vom Dokumente-Upload.
         type: boolean
 
-  legitimationsverfahren:
+  identifikation:
     type: object
     properties:
       antragstellerId:
