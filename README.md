@@ -1,5 +1,3 @@
-# ⚠ HINWEIS: Diese API befindet sich aktuell in der Entwicklung und eignet sich noch nicht zum produktiven Einsatz!
-
 # kex-market-engine-api
 Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierten Schnittstellen an die Europace Plattform anzubinden.
 Services, die die API implementieren, erwarten einen POST-Request mit einem JSON-Dokument als Request-Body.
