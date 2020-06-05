@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.4-alpha
+  version: 1.0.5
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1009,6 +1009,10 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/dokument'
+      identifikation:
+        type: array
+        items:
+          $ref: '#/definitions/identifikation'
 
   angebot:
     type: object
@@ -1238,6 +1242,16 @@ definitions:
       sichtbarFuerProduktanbieter:
         description: Zum Beispiel zum Ausschluss von Dokumenten vom Dokumente-Upload.
         type: boolean
+
+  identifikation:
+    type: object
+    properties:
+      antragstellerId:
+        type: string
+      videolegitimationUrl:
+        type: string
+      qesUrl:
+        type: string
 
   tilgungsplan:
     type: object
