@@ -473,7 +473,14 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                 "sichtbarFuerProduktAnbieter": true
             }
         }
-    ]
+    ],
+    "identifikation": [
+        {
+            "antragstellerId": "eb51059a-ab2d-4253-9a7b-61864ae17123",
+            "videolegitimationUrl": "http://videolegi-provider.de/34567876543567",
+            "qesUrl": "http://qes-provider.de/34567876543567"
+        }
+    ]    
 }
   ```
 
