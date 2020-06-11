@@ -1,7 +1,8 @@
 # KEX Market Engine API
+
 Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierten Schnittstellen an die Europace Plattform anzubinden.
 
-> :warning: Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir 
+> Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir 
 > von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h. 
 > tolerant gegenüber kompatiblen API-Änderungen beim Lesen und Prozessieren der Daten sind:
 >
@@ -128,4 +129,3 @@ Wir erwarten die Annahme-Antwort regelmässig innerhalb vonn 30s. Bei einem deut
 
 ## Nutzungsbedingungen
 Die APIs werden unter folgenden [Nutzungsbedingungen](https://developer.europace.de/terms/) zur Verfügung gestellt
-
