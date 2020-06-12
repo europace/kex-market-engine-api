@@ -32,13 +32,13 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 * [Beispiele](#beispiele)
 * [Nutzungsbedingungen](#nutzungsbedingungen)
 
-## API Version
+##API Version
 
 Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
 
 `MAJOR.MINOR.PATCH`
 
-und ist in der [Swagger Definition](httpxs://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) enthalten (`info.version`).
+und ist in der [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) enthalten (`info.version`).
 
 1. die `MAJOR` Version wird erhöht bei API inkompatiblen Änderungen (z.B. neue Pflichtangaben)
 2. die `MINOR` Version wird erhöht bei abwärtskompatiblen API Änderungen (z.B. neue optionale Angaben)
@@ -64,7 +64,7 @@ Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des 
 
 ### API Spezifikation
 
-Request und Response sind in der [Swagger Definition](httpxs://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) dokumentiert.
+Request und Response sind in der [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) dokumentiert.
 
 ### API Referenz
 
