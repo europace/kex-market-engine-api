@@ -17,20 +17,20 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 
 # Inhaltsverzeichnis
 
-* [API Version](#api-version)
-* [Dokumentation](#dokumentation)
-  * [API Spezifikation](#api-spezifikation)
-  * [API Referenz](#api-referenz)
-    * [Request](#request)
-    * [Response](#response)
-      * [Umgang mit unvollständigen Anfragen](#umgang-mit-unvollständigen-anfragen)
-      * [Umgang mit einer Unterdeckung in der Haushaltsrechnung](#umgang-mit-einer-unterdeckung-in-der-haushaltsrechnung)
-      * [Meldungskategorie](#meldungskategorie)
-      * [Machbarkeitsstatus](#machbarkeitsstatus)
-* [Authentifizierung](#authentifizierung)
-* [Performance](#performance)
-* [Beispiele](#beispiele)
-* [Nutzungsbedingungen](#nutzungsbedingungen)
+* [API Version](https://github.com/europace/kex-market-engine-api#api-version)
+* [Dokumentation](https://github.com/europace/kex-market-engine-api#dokumentation)
+  * [API Spezifikation](https://github.com/europace/kex-market-engine-api#api-spezifikation)
+  * [API Referenz](https://github.com/europace/kex-market-engine-api#api-referenz)
+    * [Request](https://github.com/europace/kex-market-engine-api#request)
+    * [Response](https://github.com/europace/kex-market-engine-api#response)
+      * [Umgang mit unvollständigen Anfragen](https://github.com/europace/kex-market-engine-api#umgang-mit-unvollst%C3%A4ndigen-anfragen)
+      * [Umgang mit einer Unterdeckung in der Haushaltsrechnung](https://github.com/europace/kex-market-engine-api#umgang-mit-einer-unterdeckung-in-der-haushaltsrechnung)
+      * [Meldungskategorie](https://github.com/europace/kex-market-engine-api#meldungskategorie)
+      * [Machbarkeitsstatus](https://github.com/europace/kex-market-engine-api#machbarkeitsstatus)
+* [Authentifizierung](https://github.com/europace/kex-market-engine-api#authentifizierung)
+* [Performance](https://github.com/europace/kex-market-engine-api#performance)
+* [Beispiele](https://github.com/europace/kex-market-engine-api#beispiele)
+* [Nutzungsbedingungen](https://github.com/europace/kex-market-engine-api#nutzungsbedingungen)
 
 ##API Version
 
@@ -122,10 +122,10 @@ Wir erwarten die Annahme-Antwort regelmässig innerhalb vonn 30s. Bei einem deut
 
 ## Beispiele
 
-* [Annahme erfolgreich](beispiele/example-annahme-erfolgreich.md)
-* [Annahme mit fehlenden Daten](beispiele/example-annahme-mit-fehlenden-daten.md)
-* [Annahme mit Unterdeckung](beispiele/example-annahme-mit-unterdeckung.md)
-* [Annahme mit Downselling](beispiele/example-annahme-mit-downselling.md)
+* [Annahme erfolgreich](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-erfolgreich.md)
+* [Annahme mit fehlenden Daten](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
+* [Annahme mit Unterdeckung](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
+* [Annahme mit Downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
 
 ## Nutzungsbedingungen
 Die APIs werden unter folgenden [Nutzungsbedingungen](https://developer.europace.de/terms/) zur Verfügung gestellt
