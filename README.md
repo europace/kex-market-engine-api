@@ -32,7 +32,7 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 * [Beispiele](https://github.com/europace/kex-market-engine-api#beispiele)
 * [Nutzungsbedingungen](https://github.com/europace/kex-market-engine-api#nutzungsbedingungen)
 
-##API Version
+## API Version
 
 Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
 
