@@ -1147,7 +1147,7 @@ definitions:
       vorlaufzinsenProTag:
         $ref: '#/definitions/euro'
       versicherung:
-        description: Darf nur geliefert werden wenn mindestens ein Risiko versichert ist.
+        description: Darf nur geliefert werden, wenn mindestens ein Risiko versichert ist.
         $ref: '#/definitions/versicherung'
     required:
       - effektivzinssatz
