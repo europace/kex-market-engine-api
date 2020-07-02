@@ -301,19 +301,19 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             },
             {
                 "kategorie": "VOLLSTAENDIGKEIT",
-                "text": "[Nachname] Für den Antragsteller Antonia ist der Nachname zu erfassen.",
+                "text": "Erfasse bitte für den Antragsteller Antonia den Nachnamen.",
                 "code": "bank.vollstaendigkeit.antragsteller.nachname"
             },
             {
                 "kategorie": "VOLLSTAENDIGKEIT",
-                "text": "[Anschrift Arbeitgeber] Für den Antragsteller Antonia ist der Name und die Anschrift (Strasse, PLZ, Ort) des Arbeitgebers, für Selbständige die Firmenbezeichnung und die Anschrift des Firmensitzes, zu erfassen.",
+                "text": "Erfasse bitte für den Antragsteller Antonia Name und Anschrift (Strasse, PLZ, Ort) des Arbeitgebers, für Selbstständige die Firmenbezeichnung und Anschrift des Firmensitzes.",
                 "code": "bank.vollstaendigkeit.antragsteller.beschaeftigung.arbeitgeber.anschrift"
             }
         ],
         "unterlagen": [
             {
                 "code": "bank.unterlage.gehaltsnachweis",
-                "text": "Bitte legen Sie die Gehaltsnachweise der letzten 3 Monate vor.",
+                "text": "Kopie der Gehaltsnachweise der letzten 3 Monate (bei fehlendem Eintrittsdatum bzw. Beschäftigung unter 14 Monate ist der Nachweis des Arbeitgebers/ Vorlage des Arbeitsvertrags erforderlich)",
                 "referenz": {
                     "id": "eb51059a-ab2d-4253-9a7b-61864ae17123",
                     "art": "ANTRAGSTELLER"
@@ -334,7 +334,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                     "zeilen": [
                         {
                             "hervorgehoben": false,
-                            "label": "Unselbständiges Nettoeinkommen",
+                            "label": "Unselbstständiges Nettoeinkommen",
                             "wert": 1989.84
                         },
                         {
@@ -389,7 +389,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                         },
                         {
                             "hervorgehoben": false,
-                            "label": "Rate der Finanzierung",
+                            "label": "Rate der aktuellen Finanzierung",
                             "wert": 110.01
                         }
                     ],
