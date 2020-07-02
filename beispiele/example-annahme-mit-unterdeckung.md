@@ -305,7 +305,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
         "unterlagen": [
             {
                 "code": "bank.unterlage.gehaltsnachweis",
-                "text": "Bitte legen Sie die Gehaltsnachweise der letzten 3 Monate vor.",
+                "text": "Lohn- und Gehaltsabrechnungen der letzten zwei Monate",
                 "referenz": {
                     "id": "eb51059a-ab2d-4253-9a7b-61864ae17123",
                     "art": "ANTRAGSTELLER"
@@ -313,7 +313,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             },
             {
                 "code": "bank.unterlage.selbstauskunft",
-                "text": "Bitte legen Sie die Selbstauskunft vor.",
+                "text": "ausgefüllte und unterzeichnete Selbstauskunft",
                 "referenz": null
             }
         ],
