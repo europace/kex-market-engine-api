@@ -1147,6 +1147,7 @@ definitions:
       vorlaufzinsenProTag:
         $ref: '#/definitions/euro'
       versicherung:
+        description: Darf nur geliefert werden wenn mindestens ein Risiko versichert ist.
         $ref: '#/definitions/versicherung'
     required:
       - effektivzinssatz
@@ -1336,11 +1337,47 @@ definitions:
 
   zeile:
     type: object
+    description: Wert sollte ungleich 0 sein. Der Übersichtlichkeit halber sind Ein- und Ausgabepositionen mit 0 Euro nicht zu mappen.
     properties:
       hervorgehoben:
         type: boolean
       label:
         type: string
+        description: Wird in der Haushaltsrechnung in KreditSmart angezeigt. Der Einheitlichkeit halber bitte mit Europace abstimmen.
+        ###########################################
+        ###  Beispiele für Einnahmenpositionen  ###
+        ###########################################
+        ###  Unselbstständiges Nettoeinkommen   ###
+        ###  Selbstständiges Nettoeinkommen     ###
+        ###  Einkünfte aus Nebentätigkeit       ###
+        ###  Rente                              ###
+        ###  Kindesunterhalt                    ###
+        ###  Ehegattenunterhalt                 ###
+        ###  Kindergeld                         ###
+        ###  Mieteinnahmen                      ###
+        ###  Einkünfte aus Kapitalvermögen      ###
+        ###  Einnahmen aus sonstigem Einkommen  ###
+        ###########################################
+
+        ##########################################
+        ###  Beispiele für Ausgabenpositionen  ###
+        ##########################################
+        ###  Lebenshaltungskosten              ###
+        ###  Mietausgaben                      ###
+        ###  Nebenkosten Wohneigentum          ###
+        ###  Bewirtschaftungskosten            ###
+        ###  Unterhaltszahlungen               ###
+        ###  Bauspar-Beiträge                  ###
+        ###  Raten weiterer Immobiliendarlehen ###
+        ###  Kreditraten                       ###
+        ###  Private Leasingraten              ###
+        ###  Sonstige Verbindlichkeitsraten    ###
+        ###  Krankenversicherungsbeiträge      ###
+        ###  Lebensversicherungsbeiträge       ###
+        ###  Mobilitätskosten                  ###
+        ###  Sonstige Ausgaben                 ###
+        ###  Rate der aktuellen Finanzierung   ###
+        ##########################################
       wert:
         $ref: '#/definitions/euro'
     required:

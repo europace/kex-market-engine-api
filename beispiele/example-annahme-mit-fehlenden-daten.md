@@ -306,7 +306,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             },
             {
                 "kategorie": "VOLLSTAENDIGKEIT",
-                "text": "[Anschrift Arbeitgeber] Für den Antragsteller Antonia ist der Name und die Anschrift (Strasse, PLZ, Ort) des Arbeitgebers, für Selbständige die Firmenbezeichnung und die Anschrift des Firmensitzes, zu erfassen.",
+                "text": "[Anschrift Arbeitgeber] Für den Antragsteller Antonia ist der Name und die Anschrift (Strasse, PLZ, Ort) des Arbeitgebers, für Selbstständige die Firmenbezeichnung und die Anschrift des Firmensitzes, zu erfassen.",
                 "code": "bank.vollstaendigkeit.antragsteller.beschaeftigung.arbeitgeber.anschrift"
             }
         ],
@@ -334,7 +334,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                     "zeilen": [
                         {
                             "hervorgehoben": false,
-                            "label": "Unselbständiges Nettoeinkommen",
+                            "label": "Unselbstständiges Nettoeinkommen",
                             "wert": 1989.84
                         },
                         {
@@ -389,7 +389,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                         },
                         {
                             "hervorgehoben": false,
-                            "label": "Rate der Finanzierung",
+                            "label": "Rate der aktuellen Finanzierung",
                             "wert": 110.01
                         }
                     ],

@@ -317,7 +317,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                     "zeilen": [
                         {
                             "hervorgehoben": false,
-                            "label": "Unselbständiges Nettoeinkommen",
+                            "label": "Unselbstständiges Nettoeinkommen",
                             "wert": 1989.84
                         },
                         {
@@ -372,7 +372,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                         },
                         {
                             "hervorgehoben": false,
-                            "label": "Rate der Finanzierung",
+                            "label": "Rate der aktuellen Finanzierung",
                             "wert": 110.01
                         }
                     ],
