@@ -313,7 +313,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
             },
             {
                 "code": "bank.unterlage.selbstauskunft",
-                "text": "ausgefüllte und unterzeichnete Selbstauskunft",
+                "text": "Ausgefüllte und unterzeichnete Selbstauskunft",
                 "referenz": null
             }
         ],
