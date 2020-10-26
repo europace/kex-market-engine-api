@@ -58,7 +58,7 @@ Die Annahme eines Antrags beinhaltet:
 - ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa) sowie
 - die Erstellung der Vertragsdokumente.
 
-Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangbeot des Produktanbieters über die API in KreditSmart einbinden.  
+Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangebot des Produktanbieters über die API in KreditSmart einbinden.  
  
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
@@ -100,7 +100,7 @@ Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem St
 | Meldungskategorie  | Beschreibung |
 |--------|--------|
 | MACHBARKEIT | Der Antrag wird abgelehnt. | 
-| VOLLSTAENDIGKEIT | Der Antrag ist unnvollständig und muss zur abschliessenden Prüfung um fehlende Angaben ergänzt werden. | 
+| VOLLSTAENDIGKEIT | Der Antrag ist unvollständig und muss zur abschließenden Prüfung um fehlende Angaben ergänzt werden. | 
 | HINWEIS | Hinweis an den Vermittler. | 
 | ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
@@ -109,7 +109,7 @@ Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem St
 | Machbarkeitsstatus  | Beschreibung |
 |--------|--------|
 | MACHBAR | Dem Antrag kann entsprochen werden. | 
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschliessend geprüft werden. Produktanbieter und Vermittler müssen den Antrag nachverhandeln.| 
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschließend geprüft werden. Produktanbieter und Vermittler müssen den Antrag nachverhandeln.| 
 | NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
 
 ## Authentifizierung
@@ -118,7 +118,7 @@ Die Art und Weise der Authentifizierung wird zwischen dem Produktanbieter und Eu
 
 ## Performance
 
-Wir erwarten die Annahme-Antwort regelmässig innerhalb vonn 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner, z.B. Vertriebe.
+Wir erwarten die Annahme-Antwort regelmäßig innerhalb von 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner, z.B. Vertriebe.
 
 ## Beispiele
 
