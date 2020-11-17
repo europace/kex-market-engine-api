@@ -2,8 +2,8 @@
 
 Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierten Schnittstellen an die Europace Plattform anzubinden.
 
-> Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir 
-> von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h. 
+> Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir
+> von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h.
 > tolerant gegenüber kompatiblen API-Änderungen beim Lesen und Prozessieren der Daten sind:
 >
 > 1. unbekannte Felder dürfen keine Fehler verursachen
@@ -48,18 +48,18 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 
 ## Dokumentation
 
-In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit geprüft, 2/3 - Konditionen ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt. 
+In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit geprüft, 2/3 - Konditionen ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt.
 Wenn alle notwendigen Daten vorhanden sind und die Vorprüfung erfolgreich war, kann die Annahme über die KEX Market Engine API erfolgen.  
 
-Die Annahme eines Antrags beinhaltet: 
+Die Annahme eines Antrags beinhaltet:
 - die Ermittlung der finalen Konditionen (inkl. Tilgungsplan),
-- die Ermittlung einzureichender Unterlagen, 
-- die Prüfung der Bonität der Antragsteller 
+- die Ermittlung einzureichender Unterlagen,
+- die Prüfung der Bonität der Antragsteller
 - ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa) sowie
 - die Erstellung der Vertragsdokumente.
 
-Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangebot des Produktanbieters über die API in KreditSmart einbinden.  
- 
+Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangebot des Produktanbieters über die API in KreditSmart einbinden.
+
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
 ### API Spezifikation
@@ -74,7 +74,7 @@ Die implementierte Schnittstelle akzeptiert Daten mit Content-Type **application
 
 Services, die die API implementieren, erwarten einen POST-Request mit einem JSON-Dokument als Request-Body.
 
-Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Dessen ungeachtet muss der Service mit fehlenden Daten umgehen können. Sie dürfen nicht zu einem technischen Fehler führen. 
+Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Dessen ungeachtet muss der Service mit fehlenden Daten umgehen können. Sie dürfen nicht zu einem technischen Fehler führen.
 
 #### Response
 
@@ -91,7 +91,7 @@ Es wird ein vollständiges Angebot ohne Dokument(e) erwartet. Der Machbarkeitsst
 
 Ist der Antrag aufgrund einer Haushaltsunterdeckung nicht machbar, erfolgt im Idealfall eine Verlängerung der Laufzeit. Ist dies nicht möglich, kann ein Downselling des Auszahlungsbetrags erfolgen.
 
-Führt das Downselling zu einem machbaren Angebot, wird dieses als angepasst = true markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu informieren. 
+Führt das Downselling zu einem machbaren Angebot, wird dieses als angepasst = true markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu informieren.
 
 Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status **NICHT_MACHBAR** und mindestens einer entsprechenden Machbarkeitsmeldung erwartet. Laufzeit und Kreditbetrag sollten in diesem Fall der ursprünglichen Anfrage entsprechen.
 
@@ -99,22 +99,22 @@ Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem St
 
 | Meldungskategorie  | Beschreibung |
 |--------|--------|
-| MACHBARKEIT | Der Antrag wird abgelehnt. | 
+| MACHBARKEIT | Der Antrag wird abgelehnt. |
 | VOLLSTAENDIGKEIT | Der Antrag ist unvollständig und muss zur abschließenden Prüfung um fehlende Angaben ergänzt werden. | 
-| HINWEIS | Hinweis an den Vermittler. | 
+| HINWEIS | Hinweis an den Vermittler. |
 | ANPASSUNG | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | 
 
 ##### Machbarkeitsstatus
 
 | Machbarkeitsstatus  | Beschreibung |
 |--------|--------|
-| MACHBAR | Dem Antrag kann entsprochen werden. | 
+| MACHBAR | Dem Antrag kann entsprochen werden. |
 | MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschließend geprüft werden. Produktanbieter und Vermittler müssen den Antrag nachverhandeln.| 
-| NICHT_MACHBAR | Der Antrag wurde abgelehnt. | 
+| NICHT_MACHBAR | Der Antrag wurde abgelehnt. |
 
 ## Authentifizierung
 
-Die Art und Weise der Authentifizierung wird zwischen dem Produktanbieter und Europace abgestimmt. 
+Die Art und Weise der Authentifizierung wird zwischen dem Produktanbieter und Europace abgestimmt.
 
 ## Performance
 
@@ -128,4 +128,4 @@ Wir erwarten die Annahme-Antwort regelmäßig innerhalb von 30s. Bei einem deutl
 * [Annahme mit Downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
 
 ## Nutzungsbedingungen
-Die APIs werden unter folgenden [Nutzungsbedingungen](https://developer.europace.de/terms/) zur Verfügung gestellt
+Die APIs werden unter folgenden [Nutzungsbedingungen](https://docs.api.europace.de/nutzungsbedingungen/) zur Verfügung gestellt
