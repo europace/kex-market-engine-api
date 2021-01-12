@@ -81,7 +81,8 @@ Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdat
 Die Antwort wird als JSON im Body der Repsonse erwartet.
 
 Grundsätzlich wird eine Antwort mit einem vollständigen Angebot und HTTP-Statuscode **200 SUCCESS** erwartet. Wenn das Angebot **MACHBAR** ist, wird mindestens ein Dokument erwartet.
-Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode 500 erwartet. Die Antwort muss kein Angebot enthalten, aber einen Hinweis auf die Fehlerursache als supportMeldung.
+
+Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode **500** erwartet. Die Antwort darf kein Angebot enthalten, sollte aber einen Hinweis auf die Fehlerursache als supportMeldung liefern.
 
 ##### Umgang mit unvollständigen Anfragen
 
@@ -126,6 +127,7 @@ Wir erwarten die Annahme-Antwort regelmäßig innerhalb von 30s. Bei einem deutl
 * [Annahme mit fehlenden Daten](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
 * [Annahme mit Unterdeckung](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
 * [Annahme mit Downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
+* [Annahme mit technischem Fehler](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
 
 ## Nutzungsbedingungen
 Die APIs werden unter folgenden [Nutzungsbedingungen](https://docs.api.europace.de/nutzungsbedingungen/) zur Verfügung gestellt
