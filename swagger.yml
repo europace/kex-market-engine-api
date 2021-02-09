@@ -1183,7 +1183,7 @@ definitions:
         description: Veraltet! Bitte versichererIds verwenden.
         type: string
       versichererIds:
-        description: IDs der Versicherer. Pflichtangabe, falls versicherer Property nicht gesetzt ist.
+        description: IDs der Versicherer. Gültige Ausprägungen erhalten Sie von ihrem Ansprechpartner bei Europace. Pflichtangabe, falls versicherer Property nicht gesetzt ist.
         type: array
         items:
           type: string
