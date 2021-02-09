@@ -1180,15 +1180,21 @@ definitions:
         items:
           $ref: '#/definitions/versicherungsrisiken'
       versicherer:
-        description: ID eines Produktanbieters.
+        description: Veraltet! Bitte versichererIds verwenden.
         type: string
+      versichererIds:
+        description: IDs der Versicherer. Pflichtangabe, falls versicherer Property nicht gesetzt ist.
+        type: array
+        items:
+          type: string
+        minItems: 1
+        uniqueItems: true
     required:
       - basisFuerDieProvisionsermittlung
       - provisionsbetrag
       - praemieBrutto
       - praemieNetto
       - risiken
-      - versicherer
 
   basisFuerDieVersicherungsprovisionsermittlung:
     type: string

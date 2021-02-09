@@ -283,7 +283,7 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
                         "arbeitslosigkeit": false
                     }
                 ],
-                "versicherer": "VERSICHERUNGS_AG"
+                "versichererIds": ["VERSICHERUNGS_AG"]
             }
         },
         "status": {
