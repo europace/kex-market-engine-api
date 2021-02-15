@@ -1,5 +1,5 @@
 ---
-version-template: 'v$MAJOR.$MINOR.$PATCH'
+version-template: '$MAJOR.$MINOR.$PATCH'
 name-template: 'v$NEXT_PATCH_VERSION'
 tag-template: 'v$NEXT_PATCH_VERSION'
 change-template: '- $TITLE (#$NUMBER)'
