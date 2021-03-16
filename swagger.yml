@@ -136,6 +136,12 @@ definitions:
         type: string
       anrede:
         $ref: '#/definitions/anrede'
+    required:
+      - partnerId
+      - firma
+      - vorname
+      - nachname
+      - anrede
 
   anrede:
     type: string
