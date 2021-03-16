@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.2.0
+  version: 1.2.1
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -136,6 +136,12 @@ definitions:
         type: string
       anrede:
         $ref: '#/definitions/anrede'
+    required:
+      - partnerId
+      - firma
+      - vorname
+      - nachname
+      - anrede
 
   anrede:
     type: string
