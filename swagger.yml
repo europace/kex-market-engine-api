@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.2.1
+  version: 1.3.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1185,9 +1185,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/versicherungsrisiken'
-      versicherer:
-        description: Veraltet! Bitte versichererIds verwenden.
-        type: string
       versichererIds:
         description: IDs der Versicherer. Gültige Ausprägungen erhalten Sie von ihrem Ansprechpartner bei Europace. Pflichtangabe, falls versicherer Property nicht gesetzt ist.
         type: array
