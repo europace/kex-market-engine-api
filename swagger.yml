@@ -136,6 +136,12 @@ definitions:
         type: string
       anrede:
         $ref: '#/definitions/anrede'
+    required:
+      - partnerId
+      - firma
+      - vorname
+      - nachname
+      - anrede
 
   anrede:
     type: string
@@ -1224,8 +1230,6 @@ definitions:
   dokument:
     type: object
     properties:
-      bezeichnung:
-        type: string
       dateiname:
         type: string
       base64pdf:
@@ -1234,7 +1238,6 @@ definitions:
       sichtbarkeit:
         $ref: '#/definitions/dokumentsichtbarkeit'
     required:
-      - bezeichnung
       - dateiname
       - base64pdf
       - sichtbarkeit

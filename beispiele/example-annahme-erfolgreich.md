@@ -465,7 +465,6 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
     },
     "dokumente": [
         {
-            "bezeichnung": "Darlehensvertrag",
             "dateiname": "Darlehensvertrag.pdf",
             "base64pdf": "foobar8765436765765454565675",
             "sichtbarkeit": {
