@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.0.0
+  version: 2.1.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -660,6 +660,8 @@ definitions:
         type: integer
       nutzungsart:
         $ref: '#/definitions/immobiliennutzungsart'
+      nebenkosten:
+        $ref: '#/definitions/euro'
 
   immobilienart:
     type: string
