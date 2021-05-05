@@ -15,23 +15,6 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 
 <!-- https://opensource.zalando.com/restful-api-guidelines/#108 -->
 
-# Inhaltsverzeichnis
-
-* [API Version](#api-version)
-* [Dokumentation](#dokumentation)
-  * [API Spezifikation](#api-spezifikation)
-  * [API Referenz](#api-referenz)
-    * [Request](#request)
-    * [Response](#response)
-      * [Umgang mit unvollständigen Anfragen](#umgang-mit-unvollst%C3%A4ndigen-anfragen)
-      * [Umgang mit einer Unterdeckung in der Haushaltsrechnung](#umgang-mit-einer-unterdeckung-in-der-haushaltsrechnung)
-      * [Meldungskategorie](#meldungskategorie)
-      * [Machbarkeitsstatus](#machbarkeitsstatus)
-* [Authentifizierung](#authentifizierung)
-* [Performance](#performance)
-* [Beispiele](#beispiele)
-* [Nutzungsbedingungen](#nutzungsbedingungen)
-
 ## API Version
 
 Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
