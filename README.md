@@ -13,6 +13,8 @@ Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangeb
 > 3. sinnvoller Umgang mit HTTP-Statuscodes, die nicht explizit dokumentiert sind  
 >
 
+<!-- https://opensource.zalando.com/restful-api-guidelines/#108 -->
+
 ## API Version
 
 Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
