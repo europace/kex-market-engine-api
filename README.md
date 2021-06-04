@@ -31,15 +31,21 @@ Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/eu
 
 ## Dokumentation
 
-In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit geprüft, 2/3 - Konditionen ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt.
+In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit geprüft, gegebenenfalls Anpassungen am Wunsch vorgenommen, 2/3 - Konditionen ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt.
 Wenn alle notwendigen Daten vorhanden sind und die Vorprüfung erfolgreich war, kann die Annahme über die KEX Market Engine API erfolgen.  
 
 Die Annahme eines Antrags beinhaltet:
-- die Ermittlung der finalen Konditionen (inkl. Tilgungsplan),
-- die Ermittlung einzureichender Unterlagen,
+- die Ermittlung der finalen Konditionen (inkl. Tilgungsplan)
+- die Ermittlung einzureichender Unterlagen
 - die Prüfung der Bonität der Antragsteller
-- ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa) sowie
-- die Erstellung der Vertragsdokumente.
+- die ggf. notwendige Anpassung des Wunsches, um ein machbares Angebot zu erhalten (inkl. Meldungen)
+  - bei der Ermittlung werden bereits Anpassungen vorgenommen, um machbare Angebote darstellen zu können. Dies soll bei der Annahme ebenfalls stattfinden. Typische Angaben, die angepasst werden:
+  - Versicherungskombinationen
+  - Laufzeiten/Raten
+  - Kreditbeträge
+  - Provisionen
+- ein Votum über die Machbarkeit des Antrags (inkl. Berücksichtigung der Scorings externer Anbieter z.B. Schufa)
+- die Erstellung der Vertragsdokumente
 
 Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangebot des Produktanbieters über die API in KreditSmart einbinden.
 
