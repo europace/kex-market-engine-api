@@ -56,8 +56,8 @@ definitions:
       kundenbetreuer:
         $ref: '#/definitions/kundenbetreuer'
       vertriebskanal:
-        description: Zur Aussteuerung der Dokumentegenerierung.
-        $ref: '#/definitions/vertriebskanal'
+        description: Zur Aussteuerung der Dokumentegenerierung. Erlaubte Auspraegungen siehe '#/definitions/vertriebskanal'
+        type: string
       featureToggles:
         description: Zur Steuerung von Features abhängig vom Request.
         type: array
