@@ -1,4 +1,4 @@
-## Annahme-Request
+## Example: Annahme mit technischem Fehler
 
 Es handelt sich um ein Beispiel zum besseren Verständnis der API. 
 

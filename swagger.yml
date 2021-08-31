@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.1.0
+  version: 2.2.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -55,6 +55,9 @@ definitions:
         $ref: '#/definitions/konto'
       kundenbetreuer:
         $ref: '#/definitions/kundenbetreuer'
+      vertriebskanal:
+        description: Zur Aussteuerung der Dokumentegenerierung.
+        $ref: '#/definitions/vertriebskanal'
       featureToggles:
         description: Zur Steuerung von Features abhängig vom Request.
         type: array
@@ -88,6 +91,12 @@ definitions:
           - angebotsvariantentyp
           - handelsbeziehung
           - beratungsart
+
+  vertriebskanal:
+    type: string
+    enum:
+      - B2B
+      - B2B2C
 
   beratungsart:
     type: string
