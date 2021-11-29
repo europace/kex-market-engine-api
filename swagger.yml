@@ -43,6 +43,9 @@ definitions:
       vorgangsnummer:
         description: Identifiziert einen Europace-Vorgang.
         type: string
+      baufiSmartVorgangsnummer:
+        description: Identifikation des assozierten BaufiSmart-Vorgangs, aus dem heraus der KreditSmart-Vorgang (vorgangsnummer) erstellt wurde.
+        type: string
       antragsteller:
         type: array
         items:
