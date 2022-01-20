@@ -40,8 +40,8 @@ Request und Response sind in der [Swagger Definition](https://github.com/europac
 In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit vorgeprüft, gegebenenfalls Anpassungen am Wunsch vorgenommen, 2/3 - Konditionen
 ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt.
 
-Wenn alle notwendigen Daten vorhanden sind und die Vorprüfung erfolgreich war, kann die Annahme über die KEX Market Engine API erfolgen. Dabei werden die vom Vermittler <b>erfassten (nicht
-angepassten)</b> Daten zum Finanzierungswunsch sowie die Antragstellerdaten an den Produktanbieter übermittelt.
+Wenn alle notwendigen Daten vorhanden sind und die Vorprüfung erfolgreich war, kann die Annahme über die KEX Market Engine API erfolgen. Dabei wird <b>der Kundenwunsch</b>, also die vom Vermittler 
+<b>erfassten (nicht angepassten)</b> Daten zum Finanzierungswunsch sowie die Antragstellerdaten an den Produktanbieter übermittelt.
 
 Der Produktanbieter führt dann seinerseits alle für die Annahme des Angebots notwendigen Schritte durch:
 
@@ -129,8 +129,6 @@ sollten in diesem Fall der ursprünglichen Anfrage entsprechen.
 
 Meldungen werden erzeugt, um den Vermittler Hinweise zur Durchführung und Machbarkeit des Antrags zu geben. Es werden folgende Kategorien unterschieden.
 
-###### <code>meldungskategorie</code>
-
 | Meldungskategorie  | Beschreibung | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
 | <code>MACHBARKEIT</code> | Der Antrag wird abgelehnt. | NICHT_MACHBAR| <i>kein Einfluß<i> |
@@ -139,8 +137,6 @@ Meldungen werden erzeugt, um den Vermittler Hinweise zur Durchführung und Machb
 | <code>ANPASSUNG</code> | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | MACHBAR | true | 
 
 ##### Status
-
-###### <code>machbarkeitsstatus</code>
 
 | Machbarkeitsstatus  | Beschreibung |
 |--------|--------|

@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.3.1
+  version: 2.4.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -169,7 +169,6 @@ definitions:
       nachname:
         type: string
 
-
   handelsbeziehung:
     type: object
     properties:
@@ -179,10 +178,20 @@ definitions:
       kreditprovisionswunsch:
         $ref: '#/definitions/prozent'
       vertriebsgruppe:
-        description: Wird vom Produktanbieter definiert um im Europace-Partnermanagement an der Handelsbeziehung gepflegt.
+        description: Wird vom Produktanbieter definiert und im Europace-Partnermanagement an der Handelsbeziehung gepflegt.
         type: string
+      produktanbieterParameter:
+        description: Zusätzlicher Parameter des Produktanbieters. Wird im Europace-Partnermanagement unter Partnerkennzeichen gepflegt.
+        type: array
+        items:
+          $ref: '#/definitions/produktanbieterParameter'
     required:
       - produktanbieter
+
+  produktanbieterParameter:
+    type: object
+    additionalProperties:
+      type: object
 
   ###
   ### Antragsteller
