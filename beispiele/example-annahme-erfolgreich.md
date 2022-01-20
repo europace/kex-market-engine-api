@@ -242,7 +242,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
     "vertriebsgruppe": "Beispielgruppe",
     "produktanbieterParameter": [
       {
-        "identifierParameter": "Wert aus dem EP-Partnermanagement"
+        "vermittlerNummerBankXY": "Wert aus dem EP-Partnermanagement"
       }
     ]
   },
