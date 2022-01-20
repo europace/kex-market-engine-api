@@ -239,7 +239,12 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
   "handelsbeziehung": {
     "produktanbieter": "BEISPIEL_BANK",
     "kreditprovisionswunsch": 0.0123,
-    "vertriebsgruppe": "Beispielgruppe"
+    "vertriebsgruppe": "Beispielgruppe",
+    "produktanbieterParameter": [
+      {
+        "identifierParameter": "Wert aus dem EP-Partnermanagement"
+      }
+    ]
   },
   "beratungsart": "AUSSER_GESCHAEFTSRAUM_VERTRAG"
 }
