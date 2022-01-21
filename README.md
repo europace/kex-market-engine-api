@@ -31,9 +31,9 @@ and is part of the [Swagger Definition](https://github.com/europace/kex-market-e
 
 You will find the current version of the API within the [Releases](https://github.com/europace/kex-market-engine-api/releases).
 
-## API specifikation
+## API specification
 
-Request and response are defined in the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml).
+Requests and responses are defined in the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml).
 
 ## Documentation
 
@@ -119,10 +119,9 @@ If the application is not feasible due to a shortfall in the Haushaltsrechnung, 
 
 If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
 
-
 If a downselling is not possible, an offer without document(s) with the status **NICHT_MACHBAR** and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
 
-##### Messages
+#### Messages
 
 Messages are generated to provide guidance to the broker on the excecution and feasibility of the application. The following categories are distinguished.
 
@@ -133,7 +132,7 @@ Messages are generated to provide guidance to the broker on the excecution and f
 | <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
 | <code>ANPASSUNG</code> | Not to adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | MACHBAR | true | 
 
-##### Status
+#### Status
 
 | Machbarkeitsstatus  | Description |
 |--------|--------|
