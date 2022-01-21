@@ -39,7 +39,7 @@ Request and response are defined in the [Swagger Definition](https://github.com/
 
 ### Annahme
 
-In a KreditSmart Vorgang, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the process is ensured.
+In a KreditSmart Vorgang, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the Vorgang is ensured.
 
 If all the necessary data is available and the preliminary check was successful, the acceptance can take place via the KEX Market Engine API. In this process, the <b>customer's request</b>, i.e. the <b>recorded (but unadjusted)</b> data of the Finanzierungswunsch by the broker, as well as the applicant data are transmitted to the Produktanbieter.
 
@@ -115,7 +115,7 @@ A complete offer without document(s) is expected. The Machbarkeitsstatus is **NI
 
 ##### Handling shortfall in the Haushaltsrechnung
 
-If the Antrag is not feasible due to a shortfall in the Haushaltsrechnung, in best case the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
+If the application is not feasible due to a shortfall in the Haushaltsrechnung, in best case the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
 
 If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
 
@@ -128,8 +128,8 @@ Messages are generated to provide guidance to the broker on the excecution and f
 
 | Message category  | Description | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
-| <code>MACHBARKEIT</code> | The Antrag will be rejected. | NICHT_MACHBAR| <i>no influence<i> |
-| <code>VOLLSTAENDIGKEIT</code> | The Antrag is incomplete and must be completed with missing data. | NICHT_MACHBAR| <i>no influence<i> | 
+| <code>MACHBARKEIT</code> | The application will be rejected. | NICHT_MACHBAR| <i>no influence<i> |
+| <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | NICHT_MACHBAR| <i>no influence<i> | 
 | <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
 | <code>ANPASSUNG</code> | Not to adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | MACHBAR | true | 
 
@@ -137,9 +137,9 @@ Messages are generated to provide guidance to the broker on the excecution and f
 
 | Machbarkeitsstatus  | Description |
 |--------|--------|
-| MACHBAR | The Antrag is accepted. |
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | The Antrag could not be finally examined. Produktanbieter and broker need to renegotiate.| 
-| NICHT_MACHBAR | The Antrag is rejected. |
+| MACHBAR | The application is accepted. |
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | The application could not be finally examined. Produktanbieter and broker need to renegotiate.| 
+| NICHT_MACHBAR | The application is rejected. |
 
 ## Authentication
 
