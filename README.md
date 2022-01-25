@@ -2,7 +2,7 @@
 
 > ⚠️ You'll find German domain-specific terms in the documentation, for translations and further explanations please refer to our [glossary](https://docs.api.europace.de/common/glossary/)
 
-This API enables Produktanbieter within consumer loans to connect their loan offering to the Europace platform via services with standardized interfaces.
+This API enables product provider within consumer loans to connect their loan offering to the Europace platform via services with standardized interfaces.
 
 > ⚠️ This API is continuously developed. Therefore we expect
 > all users to align with the "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)", which requires clients to be
@@ -35,15 +35,13 @@ You will find the current version of the API within the [Releases](https://githu
 
 Requests and responses are defined in the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml).
 
-## Documentation
-
 ### Annahme
 
-In a KreditSmart Vorgang, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the Vorgang is ensured.
+In a KreditSmart case, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the case is ensured.
 
-If all the necessary data is available and the preliminary check was successful, the acceptance can take place via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the Produktanbieter.
+If all the necessary data is available and the preliminary check was successful, the accepting of the case can take place via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
 
-The Produktanbieter should then, in turn, carry out all steps necessary for the acceptance of the offer:
+The product provider should then, in turn, carry out all steps necessary for accepting the offer:
 
 #### Adaptation of the customer's request
 
@@ -57,20 +55,20 @@ The Produktanbieter should then, in turn, carry out all steps necessary for the 
 - An adjustment message must be generated for each adjustment to inform the broker of the adjustment.
 - See fields <code>status.angepasst</code> and <code>meldungen</code>
 
-#### Credit assessment of the Antragssteller
+#### Credit assessment of the applicant
 
 - Including an overview of the accounted income and expenses and the calculated surplus/shortfall
 - See field <code>bonitaetscheck</code>
 
 #### Calculation of final conditions
 
-- Including redemption schedule
+- Including repayment plan
 - See fields <code>kredit</code> and <code>tilgungsplan</code>
 
 #### Vote on the feasibility of the application
 
 - Including consideration of the scores of external providers e.g. Schufa
-- In case of rejection, generating a message with reason for rejection
+- In case of rejection, generating a message with the reason for rejection
 - See fields <code>status</code> and <code>meldungen</code>
 
 #### Identification of documents to be submitted
@@ -87,7 +85,7 @@ The Produktanbieter should then, in turn, carry out all steps necessary for the 
 
 ### Integration of the KEX Market Engine API in Europace
 
-The KEX Market Engine API will be implemented by the Produktanbieter. With support of the KEX Market Engine service Europace can integrate the products of the Produktanbieter via API into KreditSmart.
+The KEX Market Engine API will be implemented by the product provider. With support of the KEX Market Engine service Europace can integrate the products of the product provider via API into KreditSmart.
 
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
@@ -105,13 +103,13 @@ During the offer calculation, it is already ensured that the application data is
 
 The response will be expected as JSON within the response body. 
 
-In general a response with a complete offer and HTTP status code **200 SUCCESS** is expected. If the offer is **MACHBAR**, at least one document is expected.
+In general a response with a complete offer and HTTP status code **200 SUCCESS** is expected. If the offer is `MACHBAR`, at least one document is expected.
 
 In case of a technical error a response with HTTP status code **500** is expected. The response must not contain an offer, but should give an indication of the cause of the error as <code>supportMeldung</code>.
 
 ##### Handling incomplete requests
 
-A complete offer without document(s) is expected. The Machbarkeitsstatus is **NICHT_MACHBAR**. Vollständigkeitsmeldungen, that point out the missing data, must be available.
+A complete offer without document(s) is expected. The feasibility status is `NICHT_MACHBAR`. Completeness messages, that point out the missing data, must be available.
 
 ##### Handling shortfall in the Haushaltsrechnung
 
@@ -119,26 +117,26 @@ If the application is not feasible due to a shortfall in the Haushaltsrechnung, 
 
 If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
 
-If a downselling is not possible, an offer without document(s) with the status **NICHT_MACHBAR** and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
+If a downselling is not possible, an offer without document(s) with the status `NICHT_MACHBAR` and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
 
-#### Messages
+##### Messages
 
 Messages are generated to provide guidance to the broker about the execution and feasibility of the application. The following categories are distinguished.
 
 | Message category  | Description | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
-| <code>MACHBARKEIT</code> | The application will be rejected. | NICHT_MACHBAR| <i>no influence<i> |
-| <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | NICHT_MACHBAR| <i>no influence<i> | 
+| <code>MACHBARKEIT</code> | The application will be rejected. | `NICHT_MACHBAR`| <i>no influence<i> |
+| <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | `NICHT_MACHBAR`| <i>no influence<i> | 
 | <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
-| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | MACHBAR | true | 
+| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | `MACHBAR` | true | 
 
-#### Status
+##### Status
 
 | Machbarkeitsstatus  | Description |
 |--------|--------|
-| MACHBAR | The application is accepted. |
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | The application could not be examined conclusively. Produktanbieter and broker need to renegotiate.| 
-| NICHT_MACHBAR | The application is rejected. |
+| `MACHBAR` | The application is accepted. |
+| `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and broker need to renegotiate.| 
+| `NICHT_MACHBAR` | The application is rejected. |
 
 ## Authentication
 
@@ -150,11 +148,11 @@ We expect the Annahme-response on average within 30s. If the response time is si
 
 ## Example
 
-* [Successful Annahme](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-erfolgreich.md)
-* [Annahme with missing data](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
-* [Annahme with shortfall](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
-* [Annahme with downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
-* [Annahme with technical error](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
+* [Successful Accepting](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-erfolgreich.md)
+* [Accepting with missing data](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
+* [Accepting with shortfall](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
+* [Accepting with downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
+* [Accepting with technical error](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
 
 ## Terms of use
     
