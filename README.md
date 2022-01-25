@@ -128,11 +128,11 @@ Messages are generated to provide guidance to the broker about the execution and
 | <code>MACHBARKEIT</code> | The application will be rejected. | `NICHT_MACHBAR`| <i>no influence<i> |
 | <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | `NICHT_MACHBAR`| <i>no influence<i> | 
 | <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
-| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | `MACHBAR` | true | 
+| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | `MACHBAR` | `true` | 
 
 ##### Status
 
-| Machbarkeitsstatus  | Description |
+| Feasibility status  | Description |
 |--------|--------|
 | `MACHBAR` | The application is accepted. |
 | `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and broker need to renegotiate.| 
