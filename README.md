@@ -41,9 +41,9 @@ Requests and responses are defined in the [Swagger Definition](https://github.co
 
 In a KreditSmart Vorgang, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the Vorgang is ensured.
 
-If all the necessary data is available and the preliminary check was successful, the acceptance can take place via the KEX Market Engine API. In this process, the <b>customer's request</b>, i.e. the <b>recorded (but unadjusted)</b> data of the Finanzierungswunsch by the broker, as well as the applicant data are transmitted to the Produktanbieter.
+If all the necessary data is available and the preliminary check was successful, the acceptance can take place via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the Produktanbieter.
 
-The Produktanbieter shall then in turn carry out all steps necessary for the acceptance of the offer:
+The Produktanbieter should then, in turn, carry out all steps necessary for the acceptance of the offer:
 
 #### Adaptation of the customer's request
 
@@ -97,9 +97,9 @@ The implemented interface accepts data with content-type **application/json**.
 
 #### Request
 
-Services that implement the API expect a POST-request with a JSON-document as request-body.
+Services that implement the API expect a POST request with a JSON document as request body.
 
-During the offer calculation, it is already ensured that the application data is complete. Notwithstanding this, the service must be able to deal with missing data. This should not lead to a technical error.
+During the offer calculation, it is already ensured that the application data is complete. Nevertheless, the service must be able to deal with missing data. This should not lead to a technical error.
 
 #### Response
 
@@ -111,11 +111,11 @@ In case of a technical error a response with HTTP status code **500** is expecte
 
 ##### Handling incomplete requests
 
-A complete offer without document(s) is expected. The Machbarkeitsstatus is **NICHT_MACHBAR**. Vollständigkeitsmeldungen must be available, that point out the missing data.
+A complete offer without document(s) is expected. The Machbarkeitsstatus is **NICHT_MACHBAR**. Vollständigkeitsmeldungen, that point out the missing data, must be available.
 
 ##### Handling shortfall in the Haushaltsrechnung
 
-If the application is not feasible due to a shortfall in the Haushaltsrechnung, in best case the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
+If the application is not feasible due to a shortfall in the Haushaltsrechnung, ideally the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
 
 If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
 
@@ -123,26 +123,26 @@ If a downselling is not possible, an offer without document(s) with the status *
 
 #### Messages
 
-Messages are generated to provide guidance to the broker on the excecution and feasibility of the application. The following categories are distinguished.
+Messages are generated to provide guidance to the broker about the execution and feasibility of the application. The following categories are distinguished.
 
 | Message category  | Description | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
 | <code>MACHBARKEIT</code> | The application will be rejected. | NICHT_MACHBAR| <i>no influence<i> |
 | <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | NICHT_MACHBAR| <i>no influence<i> | 
 | <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
-| <code>ANPASSUNG</code> | Not to adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | MACHBAR | true | 
+| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | MACHBAR | true | 
 
 #### Status
 
 | Machbarkeitsstatus  | Description |
 |--------|--------|
 | MACHBAR | The application is accepted. |
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | The application could not be finally examined. Produktanbieter and broker need to renegotiate.| 
+| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | The application could not be examined conclusively. Produktanbieter and broker need to renegotiate.| 
 | NICHT_MACHBAR | The application is rejected. |
 
 ## Authentication
 
-The method of authentication is agreed between the Produktanbieter and Europace.
+The method of authentication has to be coordinated between the Produktanbieter and Europace.
 
 ## Performance
 
