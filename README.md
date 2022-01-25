@@ -35,11 +35,11 @@ You will find the current version of the API within the [Releases](https://githu
 
 Requests and responses are defined in the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml).
 
-### Annahme
+### Acceptance
 
 In a KreditSmart case, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the case is ensured.
 
-If all the necessary data is available and the preliminary check was successful, the accepting of the case can take place via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
+If all the necessary data is available and the preliminary check was successful, the case can be accepted via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
 
 The product provider should then, in turn, carry out all steps necessary for accepting the offer:
 
