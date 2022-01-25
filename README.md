@@ -52,7 +52,7 @@ The product provider should then, in turn, carry out all steps necessary for acc
     - Loan amount specification
     - Insurance combinations
     - Commission
-- An adjustment message must be generated for each adjustment to inform the broker of the adjustment.
+- An adjustment message must be generated for each adjustment to inform the agent of the adjustment.
 - See fields <code>status.angepasst</code> and <code>meldungen</code>
 
 #### Credit assessment of the applicant
@@ -115,19 +115,19 @@ A complete offer without document(s) is expected. The feasibility status is `NIC
 
 If the application is not feasible due to a shortfall in the Haushaltsrechnung, ideally the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
 
-If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
+If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the agent of the adjustment.
 
 If a downselling is not possible, an offer without document(s) with the status `NICHT_MACHBAR` and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
 
 ##### Messages
 
-Messages are generated to provide guidance to the broker about the execution and feasibility of the application. The following categories are distinguished.
+Messages are generated to provide guidance to the agent about the execution and feasibility of the application. The following categories are distinguished.
 
 | Message category  | Description | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
 | <code>MACHBARKEIT</code> | The application will be rejected. | `NICHT_MACHBAR`| <i>no influence<i> |
 | <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | `NICHT_MACHBAR`| <i>no influence<i> | 
-| <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
+| <code>HINWEIS</code> | Note to the agent. | <i>no influence<i> | <i>no influence<i>|
 | <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | `MACHBAR` | `true` | 
 
 ##### Status
@@ -135,7 +135,7 @@ Messages are generated to provide guidance to the broker about the execution and
 | Feasibility status  | Description |
 |--------|--------|
 | `MACHBAR` | The application is accepted. |
-| `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and broker need to renegotiate.| 
+| `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and agent need to renegotiate.| 
 | `NICHT_MACHBAR` | The application is rejected. |
 
 ## Authentication
@@ -144,7 +144,7 @@ The method of authentication has to be coordinated between the Produktanbieter a
 
 ## Performance
 
-We expect the Annahme-response on average within 30s. If the response time is significantly higher, the functionality of our platform deteriorates for other partners, e.g. brokers.
+We expect the Annahme-response on average within 30s. If the response time is significantly higher, the functionality of our platform deteriorates for other partners, e.g. agents.
 
 ## Example
 
