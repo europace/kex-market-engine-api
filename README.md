@@ -1,165 +1,159 @@
 # KEX Market Engine API
 
-Die API ermöglicht es Produktanbietern im Ratenkreditgeschäft, ihr Kreditangebot über Services mit standardisierten Schnittstellen an die Europace Plattform anzubinden.
+> ⚠️ You'll find German domain-specific terms in the documentation, for translations and further explanations please refer to our [glossary](https://docs.api.europace.de/common/glossary/)
 
-> Diese Schnittstelle wird kontinuierlich weiterentwickelt. Daher erwarten wir
-> von allen Nutzern dieser Schnittstelle, dass sie das "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)" nutzen, d.h.
-> tolerant gegenüber kompatiblen API-Änderungen beim Lesen und Prozessieren der Daten sind:
+This API enables product provider within consumer loans to connect their loan offering to the Europace platform via services with standardized interfaces.
+
+> ⚠️ This API is continuously developed. Therefore we expect
+> all users to align with the "[Tolerant Reader Pattern](https://martinfowler.com/bliki/TolerantReader.html)", which requires clients to be
+> tolerant towards compatible API changes when reading and processing the data. This means:
 >
-> 1. unbekannte Felder dürfen keine Fehler verursachen
+> 1. unknown properties must not result in errors
 >
-> 2. Strings mit eingeschränktem Wertebereich (Enums) müssen mit neuen, unbekannten Werten umgehen können
+> 2. Strings with a restricted set of values (Enums) must support new unknown values
 >
-> 3. sinnvoller Umgang mit HTTP-Statuscodes, die nicht explizit dokumentiert sind
+> 3. sensible usage of HTTP status codes, even if they are not explicitly documented
 >
 
 <!-- https://opensource.zalando.com/restful-api-guidelines/#108 -->
 
-## API Version
+## API version
 
-Die Version der API orientiert sich am [Semantic Versioning](https://semver.org/) und hat das Format
+The version of the API is based on [Semantic Versioning](https://semver.org/) and has the format
 
 `MAJOR.MINOR.PATCH`
 
-und ist in der [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) enthalten (`info.version`).
+and is part of the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) (`info.version`).
 
-1. die `MAJOR` Version wird erhöht bei API inkompatiblen Änderungen (z.B. neue Pflichtangaben)
-2. die `MINOR` Version wird erhöht bei abwärtskompatiblen API Änderungen (z.B. neue optionale Angaben)
-3. die `PATCH` Version wird erhöht, wenn die API gleich bleibt, jedoch die Swagger Definition angepasst wird (z.B. Erweiterung oder Anpassung von Beschreibungen in der API)
+1. The `MAJOR` version is incremented in case of API incompatible changes (e.g. new mandatory data)
+2. The `MINOR` version is incremented for backward compatible API changes (e.g. new optional specifications)
+3. The `PATCH` version is incremented if the API remains the same, but the Swagger definition is adapted (e.g. extension or adaptation of descriptions in the API)
 
-Die aktuelle Version der API ist jeweils in den [Releases](https://github.com/europace/kex-market-engine-api/releases) zu finden.
+You will find the current version of the API within the [Releases](https://github.com/europace/kex-market-engine-api/releases).
 
-## API Spezifikation
+## API specification
 
-Request und Response sind in der [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml) dokumentiert.
+Requests and responses are defined in the [Swagger Definition](https://github.com/europace/kex-market-engine-api/blob/master/swagger.yml).
 
-## Dokumentation
+### Acceptance
 
-### Annahme
+In a KreditSmart case, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the case is ensured.
 
-In einem KreditSmart Vorgang werden die Angebote zunächst von Europace ermittelt. Dabei wird die allgemeine Machbarkeit vorgeprüft, gegebenenfalls Anpassungen am Wunsch vorgenommen, 2/3 - Konditionen
-ermittelt sowie die Vollständigkeit des Vorgangs sichergestellt.
+If all the necessary data is available and the preliminary check was successful, the case can be accepted via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
 
-Wenn alle notwendigen Daten vorhanden sind und die Vorprüfung erfolgreich war, kann die Annahme über die KEX Market Engine API erfolgen. Dabei wird <b>der Kundenwunsch</b>, also die vom Vermittler 
-<b>erfassten (nicht angepassten)</b> Daten zum Finanzierungswunsch sowie die Antragstellerdaten an den Produktanbieter übermittelt.
+The product provider should then, in turn, carry out all steps necessary for accepting the offer:
 
-Der Produktanbieter führt dann seinerseits alle für die Annahme des Angebots notwendigen Schritte durch:
+#### Adaptation of the customer's request
 
-#### Anpassung des Kundenwunsches
+- If it is not possible to issue an offer on the desired financing criteria, an adjustment should be made to generate a feasible offer
+- The following specifications can be adjusted
+    - Duration specification
+    - Monthly payment specification
+    - Loan amount specification
+    - Insurance combinations
+    - Commission
+- An adjustment message must be generated for each adjustment to inform the broker of the adjustment.
+- See fields <code>status.angepasst</code> and <code>meldungen</code>
 
-- Ist die Herausgabe eines Angebots zu den gewünschten Finanzierungskriterien nicht möglich, sollte eine Anpassung erfolgen, um ein machbares Angebot zu erzeugen
-- Folgende Vorgaben können angepasst werden
-    - Laufzeitvorgabe
-    - Ratenvorgabe
-    - Kreditbeträge
-    - Versicherungskombinationen
-    - Provisionen
-- Zu jeder Anpassung muss eine Anpassungsmeldung generiert werden, um den Vermittler über die Anpassung zu informieren.
-- siehe Felder <code>status.angepasst</code> und <code>meldungen</code>
+#### Credit assessment of the applicant
 
-#### Bonitätsprüfung der Antragsteller
+- Including an overview of the accounted income and expenses and the calculated surplus/shortfall
+- See field <code>bonitaetscheck</code>
 
-- inklusive Übersicht der angerechneten Einnahmen sowie Ausgaben und des ermittelten Überschusses/Unterdeckung
-- siehe Feld <code>bonitaetscheck</code>
+#### Calculation of final conditions
 
-#### Ermittlung der finalen Konditionen
+- Including repayment plan
+- See fields <code>kredit</code> and <code>tilgungsplan</code>
 
-- inklusive Tilgungsplan
-- siehe Felder <code>kredit</code> und <code>tilgungsplan</code>
+#### Vote on the feasibility of the application
 
-#### Votum über die Machbarkeit des Antrags
+- Including consideration of the scores of external providers e.g. Schufa
+- In case of rejection, generating a message with the reason for rejection
+- See fields <code>status</code> and <code>meldungen</code>
 
-- inklusive Berücksichtigung der Scorings externer Anbieter z.B. Schufa
-- Im Falle der Ablehnung, generierung einer Meldung mit Ablehnungsgrund
-- siehe Felder <code>status</code> und <code>meldungen</code>
+#### Identification of documents to be submitted
+- See field <code>unterlagen</code>
 
-#### Ermittlung einzureichender Unterlagen
-- siehe Feld <code>unterlagen</code>
+#### Creation of the contract documents
+- See field <code>dokumente</code>
 
-#### Erstellung der Vertragsdokumente
-- siehe Feld <code>dokumente</code>
+#### Providing links for the digital identification of the Antragsteller
 
-#### Bereitstellung von Links zur digitialen Identifikation der Antragsteller
-
-- Videolegitimation
+- Video legitimation
 - QES
-- siehe Feld <code>identifikation</code>
+- See field <code>identifikation</code>
 
-### Integration der KEX Market Engine API in Europace
+### Integration of the KEX Market Engine API in Europace
 
-Die KEX Market Engine API wird vom Produktanbieter implementiert. Mit Hilfe des KEX Market Engine Service kann Europace das Produktangebot des Produktanbieters über die API in KreditSmart einbinden.
+The KEX Market Engine API will be implemented by the product provider. With support of the KEX Market Engine service Europace can integrate the products of the product provider via API into KreditSmart.
 
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
-### API Referenz
+### API reference
 
-Die implementierte Schnittstelle akzeptiert Daten mit Content-Type **application/json**.
+The implemented interface accepts data with content-type **application/json**.
 
 #### Request
 
-Services, die die API implementieren, erwarten einen POST-Request mit einem JSON-Dokument als Request-Body.
+Services that implement the API expect a POST request with a JSON document as request body.
 
-Während der Angebotsermittlung wird bereits sichergestellt, dass die Antragsdaten vollständig sind. Dessen ungeachtet muss der Service mit fehlenden Daten umgehen können. Sie dürfen nicht zu einem
-technischen Fehler führen.
+During the offer calculation, it is already ensured that the application data is complete. Nevertheless, the service must be able to deal with missing data. This should not lead to a technical error.
 
 #### Response
 
-Die Antwort wird als JSON im Body der Repsonse erwartet.
+The response will be expected as JSON within the response body. 
 
-Grundsätzlich wird eine Antwort mit einem vollständigen Angebot und HTTP-Statuscode **200 SUCCESS** erwartet. Wenn das Angebot **MACHBAR** ist, wird mindestens ein Dokument erwartet.
+In general a response with a complete offer and HTTP status code **200 SUCCESS** is expected. If the offer is `MACHBAR`, at least one document is expected.
 
-Im Falle eines technischen Fehlers wird eine Antwort mit HTTP-Statuscode **500** erwartet. Die Antwort darf kein Angebot enthalten, sollte aber einen Hinweis auf die Fehlerursache als <code>
-supportMeldung</code> liefern.
+In case of a technical error a response with HTTP status code **500** is expected. The response must not contain an offer, but should give an indication of the cause of the error as <code>supportMeldung</code>.
 
-##### Umgang mit unvollständigen Anfragen
+##### Handling incomplete requests
 
-Es wird ein vollständiges Angebot ohne Dokument(e) erwartet. Der Machbarkeitsstatus ist **NICHT_MACHBAR**. Es sind Vollständigkeitsmeldungen vorhanden, die auf die fehlenden Angaben hinweisen.
+A complete offer without document(s) is expected. The feasibility status is `NICHT_MACHBAR`. Completeness messages, that point out the missing data, must be available.
 
-##### Umgang mit einer Unterdeckung in der Haushaltsrechnung
+##### Handling shortfall in the Haushaltsrechnung
 
-Ist der Antrag aufgrund einer Haushaltsunterdeckung nicht machbar, erfolgt im Idealfall eine Verlängerung der Laufzeit. Ist dies nicht möglich, kann ein Downselling des Auszahlungsbetrags erfolgen.
+If the application is not feasible due to a shortfall in the Haushaltsrechnung, ideally the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
 
-Führt das Downselling zu einem machbaren Angebot, wird dieses als <code>"angepasst": true</code> markiert und enthält entsprechende Anpassungsmeldungen, um den Vermittler über die Anpassung zu
-informieren.
+If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the broker of the adjustment.
 
-Ist ein Downselling nicht möglich, wird ein Angebot ohne Dokument(e) mit dem Status **NICHT_MACHBAR** und mindestens einer entsprechenden Machbarkeitsmeldung erwartet. Laufzeit und Kreditbetrag
-sollten in diesem Fall der ursprünglichen Anfrage entsprechen.
+If a downselling is not possible, an offer without document(s) with the status `NICHT_MACHBAR` and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
 
-##### Meldungen
+##### Messages
 
-Meldungen werden erzeugt, um den Vermittler Hinweise zur Durchführung und Machbarkeit des Antrags zu geben. Es werden folgende Kategorien unterschieden.
+Messages are generated to provide guidance to the broker about the execution and feasibility of the application. The following categories are distinguished.
 
-| Meldungskategorie  | Beschreibung | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
+| Message category  | Description | <code>machbarkeitsstatus</code>| <code>angepasst</code> |
 |--------|--------|--------|--------|
-| <code>MACHBARKEIT</code> | Der Antrag wird abgelehnt. | NICHT_MACHBAR| <i>kein Einfluß<i> |
-| <code>VOLLSTAENDIGKEIT</code> | Der Antrag ist unvollständig und muss zur abschließenden Prüfung um fehlende Angaben ergänzt werden. | NICHT_MACHBAR| <i>kein Einfluß<i> | 
-| <code>HINWEIS</code> | Hinweis an den Vermittler. | <i>kein Einfluß<i> | <i>kein Einfluß<i>|
-| <code>ANPASSUNG</code> | Information über eine Anpassung des Kundenwunsches, z.B. Rate, Auszahlungsbetrag oder Versicherungswunsch. | MACHBAR | true | 
+| <code>MACHBARKEIT</code> | The application will be rejected. | `NICHT_MACHBAR`| <i>no influence<i> |
+| <code>VOLLSTAENDIGKEIT</code> | The application is incomplete and must be completed with missing data. | `NICHT_MACHBAR`| <i>no influence<i> | 
+| <code>HINWEIS</code> | Note to the broker. | <i>no influence<i> | <i>no influence<i>|
+| <code>ANPASSUNG</code> | Information about adjustments of the customer's request, e.g. monthly payment, loan amount oder insurance. | `MACHBAR` | `true` | 
 
 ##### Status
 
-| Machbarkeitsstatus  | Beschreibung |
+| Feasibility status  | Description |
 |--------|--------|
-| MACHBAR | Dem Antrag kann entsprochen werden. |
-| MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER | Der Antrag konnte nicht abschließend geprüft werden. Produktanbieter und Vermittler müssen den Antrag nachverhandeln.| 
-| NICHT_MACHBAR | Der Antrag wurde abgelehnt. |
+| `MACHBAR` | The application is accepted. |
+| `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and broker need to renegotiate.| 
+| `NICHT_MACHBAR` | The application is rejected. |
 
-## Authentifizierung
+## Authentication
 
-Die Art und Weise der Authentifizierung wird zwischen dem Produktanbieter und Europace abgestimmt.
+The method of authentication has to be coordinated between the Produktanbieter and Europace.
 
 ## Performance
 
-Wir erwarten die Annahme-Antwort regelmäßig innerhalb von 30s. Bei einem deutlich höherem Wert, verschlechtert sich die Funktionalität unserer Plattform für andere Partner, z.B. Vertriebe.
+We expect the Annahme-response on average within 30s. If the response time is significantly higher, the functionality of our platform deteriorates for other partners, e.g. brokers.
 
-## Beispiele
+## Example
 
-* [Erfolgreiche Annahme](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-erfolgreich.md)
-* [Annahme mit fehlenden Daten](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
-* [Annahme mit Unterdeckung](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
-* [Annahme mit Downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
-* [Annahme mit technischem Fehler](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
+* [Successful Accepting](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-erfolgreich.md)
+* [Accepting with missing data](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-fehlenden-daten.md)
+* [Accepting with shortfall](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
+* [Accepting with downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
+* [Accepting with technical error](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
 
-## Nutzungsbedingungen
-
-Die APIs werden unter folgenden [Nutzungsbedingungen](https://docs.api.europace.de/nutzungsbedingungen/) zur Verfügung gestellt
+## Terms of use
+    
+The APIs are made available under the following [Terms of Use](https://docs.api.europace.de/terms/).
