@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.4.0
+  version: 2.4.1
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1050,8 +1050,10 @@ definitions:
         description: ID eines Produktanbieters, wie in der Anfrage unter handelsbeziehung.produktanbieter angegeben. Ordnet das Angebot dem angefragtem Produktanbieter zu.
         type: string
       referenznummerProduktanbieter:
+        description: Vertrags- oder Antragsnummer des Produktanbieters. Dient auch der späteren Identifiezierung des Antrags bei Statusupdates.
         type: string
       referenznummerDienstleister:
+        description: Bei Anbindunger mehrerer Produktanbieter durch einen Dienstleister zu füllen.
         type: string
       produktbezeichnung:
         type: string
