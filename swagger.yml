@@ -1050,7 +1050,7 @@ definitions:
         description: ID eines Produktanbieters, wie in der Anfrage unter handelsbeziehung.produktanbieter angegeben. Ordnet das Angebot dem angefragtem Produktanbieter zu.
         type: string
       referenznummerProduktanbieter:
-        description: Vertrags- oder Antragsnummer des Produktanbieters. Dient auch der späteren Identifiezierung des Antrags bei Statusupdates.
+        description: Vertrags- oder Antragsnummer des Produktanbieters. Dient auch der späteren Identifizierung des Antrags bei Statusupdates.
         type: string
       referenznummerDienstleister:
         description: Bei Anbindunger mehrerer Produktanbieter durch einen Dienstleister zu füllen.
