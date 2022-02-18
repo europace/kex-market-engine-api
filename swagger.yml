@@ -1053,7 +1053,7 @@ definitions:
         description: Vertrags- oder Antragsnummer des Produktanbieters. Dient auch der späteren Identifizierung des Antrags bei Statusupdates.
         type: string
       referenznummerDienstleister:
-        description: Bei Anbindunger mehrerer Produktanbieter durch einen Dienstleister zu füllen.
+        description: Erfolgt die Antragserzeugung mithilfe eines Dienstleisters, wird hier die Antrags-ID des durchleitenden Dienstleisters erwartet.
         type: string
       produktbezeichnung:
         type: string
