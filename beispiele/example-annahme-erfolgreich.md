@@ -326,7 +326,6 @@ Der Tilgungsplan ist teilweise gekürzt dargestellt.
       }
     ],
     "bonitaetscheck": {
-      "name": "Haushaltsrechnung",
       "ueberschrift": "Musterbank",
       "ueberschuss": 10,
       "bloecke": [

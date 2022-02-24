@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.4.2
+  version: 2.4.3
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1089,7 +1089,6 @@ definitions:
       - angebotsvariantentyp
       - kredit
       - status
-      - bonitaetscheck
 
   produktart:
     type: string
@@ -1330,8 +1329,6 @@ definitions:
   bonitaetscheck:
     type: object
     properties:
-      name:
-        type: string
       ueberschrift:
         type: string
       ueberschuss:
@@ -1340,8 +1337,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/titelBlock'
-    required:
-      - name
 
   block:
     type: object
