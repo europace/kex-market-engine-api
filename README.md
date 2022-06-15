@@ -37,9 +37,11 @@ Requests and responses are defined in the [Swagger Definition](https://github.co
 
 ### Acceptance
 
-In a KreditSmart case, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are calculated and the completeness of the case is ensured.
+In a KreditSmart case, offers are first calculated by Europace. In the process, the general feasibility is pre-checked, adjustments to the request are made if necessary, 2/3 - conditions are
+calculated and the completeness of the case is ensured.
 
-If all the necessary data is available and the preliminary check was successful, the case can be accepted via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
+If all the necessary data is available and the preliminary check was successful, the case can be accepted via the KEX Market Engine API. In this process, the customer's request, i.e. the provided data
+of the Finanzierungswunsch, as well as the applicant data are transmitted to the product provider.
 
 The product provider should then, in turn, carry out all steps necessary for accepting the offer:
 
@@ -72,9 +74,11 @@ The product provider should then, in turn, carry out all steps necessary for acc
 - See fields <code>status</code> and <code>meldungen</code>
 
 #### Identification of documents to be submitted
+
 - See field <code>unterlagen</code>
 
 #### Creation of the contract documents
+
 - See field <code>dokumente</code>
 
 #### Providing links for the digital identification of the Antragsteller
@@ -85,7 +89,8 @@ The product provider should then, in turn, carry out all steps necessary for acc
 
 ### Integration of the KEX Market Engine API in Europace
 
-The KEX Market Engine API will be implemented by the product provider. With support of the KEX Market Engine service Europace can integrate the products of the product provider via API into KreditSmart.
+The KEX Market Engine API will be implemented by the product provider. With support of the KEX Market Engine service Europace can integrate the products of the product provider via API into
+KreditSmart.
 
 ![](KEX%20Market%20Engine%20API%20Annahme%20Sequenzdiagramm.svg)
 
@@ -101,11 +106,12 @@ During the offer calculation, it is already ensured that the application data is
 
 #### Response
 
-The response will be expected as JSON within the response body. 
+The response will be expected as JSON within the response body.
 
-In general a response with a complete offer and HTTP status code **200 SUCCESS** is expected. If the offer is `MACHBAR`, at least one document is expected.
-
-In case of a technical error a response with HTTP status code **500** is expected. The response must not contain an offer, but should give an indication of the cause of the error as <code>supportMeldung</code>.
+Generally - no matter if the offer is `MACHBAR` or `NICHT_MACHBAR` - a response with a **complete** offer and HTTP status code **200 SUCCESS** is expected. If the offer is `MACHBAR`, at least one
+document is expected.
+In case of a technical error a response with HTTP status code **500** is expected. The response does not need to contain an offer, but should give an indication of the cause of the error as <code>
+supportMeldung</code>.
 
 ##### Handling incomplete requests
 
@@ -117,7 +123,8 @@ If the application is not feasible due to a shortfall in the Haushaltsrechnung, 
 
 If a downselling results in a feasible offer, this is marked as <code>"angepasst": true</code> and contains appropriate adjustment messages to inform the agent of the adjustment.
 
-If a downselling is not possible, an offer without document(s) with the status `NICHT_MACHBAR` and at least one corresponding feasibility message is expected. Duration and loan amount should in this case correspond to the original request.
+If a downselling is not possible, an offer without document(s) with the status `NICHT_MACHBAR` and at least one corresponding feasibility message is expected. Duration and loan amount should in this
+case correspond to the original request.
 
 ##### Messages
 
@@ -155,5 +162,5 @@ We expect the Annahme-response on average within 30s. If the response time is si
 * [Accepting with technical error](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
 
 ## Terms of use
-    
+
 The APIs are made available under the following [Terms of Use](https://docs.api.europace.de/terms/).
