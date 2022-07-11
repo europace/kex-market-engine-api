@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.4.4
+  version: 2.4.5
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1073,6 +1073,7 @@ definitions:
         description: Token, dass dazu dient die bei der Ermittlung berechnete AngebotsVariante bei der Annahme identifizieren zu können.
         type: string
       kredit:
+        description: Angaben zu den Kredit-Konditionen. Wenn diese fehlen (null) wird das Angebot als NICHT-MACHBAR interpretiert.
         $ref: '#/definitions/kredit'
       status:
         $ref: '#/definitions/angebotsstatus'
@@ -1097,7 +1098,6 @@ definitions:
       - produktbezeichnung
       - produktart
       - angebotsvariantentyp
-      - kredit
       - status
 
   produktart:

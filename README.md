@@ -117,6 +117,8 @@ supportMeldung</code>.
 
 A complete offer without document(s) is expected. The feasibility status is `NICHT_MACHBAR`. Completeness messages, that point out the missing data, must be available.
 
+If conditions of an offer are not available due to missing/incomplete response of the backend-system, the field `kredit` could be left empty (`null`). The offer will be automatically marked as `NICHT_MACHBAR`.
+
 ##### Handling shortfall in the Haushaltsrechnung
 
 If the application is not feasible due to a shortfall in the Haushaltsrechnung, ideally the duration will be extended. If this is not possible, a downselling of the loan amount can take place.
