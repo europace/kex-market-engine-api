@@ -1249,6 +1249,8 @@ definitions:
         type: string
       code:
         type: string
+        description: Identifiziert eine Meldung anhand ihrer fachlichen Bedeutung. Dient der Analyse in Logs.
+        example: bank.anpassung.laufzeit
     required:
       - kategorie
       - text
