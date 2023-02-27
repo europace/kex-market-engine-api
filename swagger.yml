@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.4.5
+  version: 2.4.6
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -89,6 +89,11 @@ definitions:
             $ref: '#/definitions/handelsbeziehung'
           beratungsart:
             $ref: '#/definitions/beratungsart'
+          kontoumsaetze:
+            description: Liste mit Kontoumsatzdaten je Antragsteller in Base64
+            type: array
+            items:
+              $ref: "#/definitions/kontoumsaetze"
         required:
           - antragsnummer
           - angebotsvariantentyp
@@ -107,6 +112,17 @@ definitions:
       - PRAESENZ_GESCHAEFT
       - FERN_ABSATZ_GESCHAEFT
       - AUSSER_GESCHAEFTSRAUM_VERTRAG
+
+  kontoumsaetze:
+    type: object
+    properties:
+      umsatzdaten:
+        type: string
+      antragstellerId:
+        type: string
+    required:
+      - umsatzdaten
+      - antragstellerId
 
   featureToggle:
     type: object
