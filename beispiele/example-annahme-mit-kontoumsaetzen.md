@@ -18,7 +18,9 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
   "kontoumsaetze": [
     {
       "kontoumsaetze": "aSdtIGEgc3dlZXQgbGl0dGxlIGtvbnRvdW1zYXR6",
-      "antragstellerId": "eb51059a-ab2d-4253-9a7b-61864ae17123"
+      "antragstellerIds": [
+        "eb51059a-ab2d-4253-9a7b-61864ae17123"
+      ]
     }
   ],
   "antragsteller": [
