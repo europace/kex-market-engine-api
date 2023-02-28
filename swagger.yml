@@ -90,7 +90,7 @@ definitions:
           beratungsart:
             $ref: '#/definitions/beratungsart'
           kontoumsaetze:
-            description: Liste mit Kontoumsatzdaten je Antragsteller in Base64
+            description: Liste mit Kontoumsatzdaten und zugehörigen AntragstellerIds in Base64
             type: array
             items:
               $ref: "#/definitions/kontoumsaetze"
@@ -118,11 +118,13 @@ definitions:
     properties:
       umsatzdaten:
         type: string
-      antragstellerId:
-        type: string
+      antragstellerIds:
+        type: array
+        items:
+          $ref: string
     required:
       - umsatzdaten
-      - antragstellerId
+      - antragstellerIds
 
   featureToggle:
     type: object
