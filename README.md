@@ -147,6 +147,12 @@ Messages are generated to provide guidance to the agent about the execution and 
 | `MACHBAR_UNTER_VORBEHALT_PRODUKTANBIETER` | The application could not be examined conclusively. Product provider and agent need to renegotiate.| 
 | `NICHT_MACHBAR` | The application is rejected. |
 
+##### Account statements in requests
+
+The API offers the possibility to provide an applicant's account statements. These are included only if the chosen product is an instant loan, meaning that a 
+definitive decision whether to accept or reject the loan application is made instantly without human interaction. Also, the applicant has to permit the use of 
+her or his data via a separate process.
+
 ## Authentication
 
 The method of authentication has to be coordinated between the Produktanbieter and Europace.
