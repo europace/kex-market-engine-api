@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.5.0
+  version: 2.6.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -902,6 +902,9 @@ definitions:
       verwendung:
         type: string
       auszahlungsbetrag:
+        $ref: '#/definitions/euro'
+      benoetigterBetrag:
+        description: Bei Modernisierungsdarlehen beispielsweise der Betrag, der für die Modernisierung aufgewendet wird.
         $ref: '#/definitions/euro'
       ratenzahlungstermin:
         $ref: '#/definitions/ratenzahlungstermin'
