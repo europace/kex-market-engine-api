@@ -556,6 +556,12 @@ definitions:
       - PRIVAT
       - HAENDLER
 
+  modernisierung:
+    type: object
+    properties:
+      modernisierungsbetrag:
+        $ref: '#/definitions/euro'
+
   bonitaetsangaben:
     type: object
     properties:
@@ -891,6 +897,9 @@ definitions:
         $ref: '#/definitions/abzuloesendeVerbindlichkeiten'
       fahrzeug:
         $ref: '#/definitions/fahrzeug'
+      modernisierung:
+        $ref: '#/definitions/modernisierung'
+
     required:
       - kreditwunsch
 
@@ -902,9 +911,6 @@ definitions:
       verwendung:
         type: string
       auszahlungsbetrag:
-        $ref: '#/definitions/euro'
-      benoetigterBetrag:
-        description: Bei Modernisierungsdarlehen beispielsweise der Betrag, der für die Modernisierung aufgewendet wird.
         $ref: '#/definitions/euro'
       ratenzahlungstermin:
         $ref: '#/definitions/ratenzahlungstermin'

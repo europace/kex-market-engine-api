@@ -187,7 +187,6 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
       "finanzierungszweck": "SONSTIGES",
       "verwendung": "Autoreparatur, Schulranzen und Urlaub",
       "auszahlungsbetrag": 10000,
-      "benoetigterBetrag": 10000,
       "ratenzahlungstermin": "MONATSENDE",
       "laufzeitInMonaten": 72
     },
@@ -206,7 +205,8 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
       "dispositionskredite": [],
       "geschaeftskredite": []
     },
-    "fahrzeug": {}
+    "fahrzeug": {},
+    "modernisierung": {}
   },
   "konto": {
     "kreditinstitut": "Musterbank",
