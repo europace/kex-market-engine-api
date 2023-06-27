@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.5.0
+  version: 2.6.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -556,6 +556,12 @@ definitions:
       - PRIVAT
       - HAENDLER
 
+  modernisierung:
+    type: object
+    properties:
+      modernisierungsbetrag:
+        $ref: '#/definitions/euro'
+
   bonitaetsangaben:
     type: object
     properties:
@@ -891,6 +897,9 @@ definitions:
         $ref: '#/definitions/abzuloesendeVerbindlichkeiten'
       fahrzeug:
         $ref: '#/definitions/fahrzeug'
+      modernisierung:
+        $ref: '#/definitions/modernisierung'
+
     required:
       - kreditwunsch
 

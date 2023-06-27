@@ -197,7 +197,8 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
       "dispositionskredite": [],
       "geschaeftskredite": []
     },
-    "fahrzeug": {}
+    "fahrzeug": {},
+    "modernisierung": {}
   },
   "konto": {
     "kreditinstitut": "Musterbank",
