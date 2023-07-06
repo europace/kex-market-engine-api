@@ -138,7 +138,6 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
           "sonstigeAusgaben": 65
         },
         "vermoegen": {
-          "rueckkaufswertLebensversicherung": 741.51,
           "immobilien": []
         },
         "verbindlichkeiten": {
@@ -164,9 +163,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
               "glaeubiger": "MUSTERBANK"
             }
           ],
-          "immobiliendarlehen": [],
-          "geschaeftskredite": [],
-          "kontokorrentkredite": []
+          "immobiliendarlehen": []
         }
       }
     }
@@ -194,8 +191,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
       "ratenkredite": [],
       "sonstigeVerbindlichkeiten": [],
       "kreditkarten": [],
-      "dispositionskredite": [],
-      "geschaeftskredite": []
+      "dispositionskredite": []
     },
     "fahrzeug": {},
     "modernisierung": {}

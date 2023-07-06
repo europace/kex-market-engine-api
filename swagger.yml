@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.6.0
+  version: 3.0.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -601,8 +601,6 @@ definitions:
           $ref: '#/definitions/nebentaetigkeit'
       mietUndPachteinnahmen:
         $ref: '#/definitions/mietUndPachteinnahmen'
-      einkuenfteAusKapitalvermoegen:
-        $ref: '#/definitions/euro'
       sonstigeEinnahmen:
         $ref: '#/definitions/euro'
 
@@ -676,20 +674,10 @@ definitions:
   vermoegen:
     type: object
     properties:
-      rueckkaufswertLebensversicherung:
-        $ref: '#/definitions/euro'
-      bausparguthaben:
-        $ref: '#/definitions/euro'
       immobilien:
         type: array
         items:
           $ref: '#/definitions/immobilie'
-      depotguthaben:
-        $ref: '#/definitions/euro'
-      bankUndSparguthaben:
-        $ref: '#/definitions/euro'
-      sonstigesVermoegen:
-        $ref: '#/definitions/euro'
 
   immobilie:
     type: object
@@ -751,14 +739,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/immobiliendarlehen'
-      geschaeftskredite:
-        type: array
-        items:
-          $ref: '#/definitions/geschaeftskredit'
-      kontokorrentkredite:
-        type: array
-        items:
-          $ref: '#/definitions/kontokorrentkredit'
 
   ratenkredit:
     type: object
@@ -849,37 +829,6 @@ definitions:
       restschuld:
         $ref: '#/definitions/euro'
 
-  geschaeftskredit:
-    type: object
-    properties:
-      id:
-        type: string
-      monatlicheRate:
-        $ref: '#/definitions/euro'
-      letzteRate:
-        $ref: '#/definitions/euro'
-      datumLetzteRate:
-        type: string
-        format: date
-      restschuld:
-        $ref: '#/definitions/euro'
-      glaeubiger:
-        type: string
-
-  kontokorrentkredit:
-    type: object
-    properties:
-      id:
-        type: string
-      verfuegungsrahmen:
-        $ref: '#/definitions/euro'
-      beanspruchterBetrag:
-        $ref: '#/definitions/euro'
-      zinssatz:
-        $ref: '#/definitions/prozent'
-      glaeubiger:
-        type: string
-
   ###
   ### Finanzierungswunsch
   ###
@@ -942,10 +891,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/abzuloesenderDispositionskredit'
-      geschaeftskredite:
-        type: array
-        items:
-          $ref: '#/definitions/abzuloesenderGeschaeftskredit'
 
   finanzierungszweck:
     description: Verwendungszweck
@@ -1008,21 +953,6 @@ definitions:
     properties:
       id:
         type: string
-      abloeseBetrag:
-        $ref: '#/definitions/euro'
-      konto:
-        $ref: '#/definitions/konto'
-
-  abzuloesenderGeschaeftskredit:
-    type: object
-    properties:
-      id:
-        type: string
-      datumErsteRate:
-        type: string
-        format: date
-      urspruenglicherBetrag:
-        $ref: '#/definitions/euro'
       abloeseBetrag:
         $ref: '#/definitions/euro'
       konto:
