@@ -44,7 +44,7 @@ definitions:
         description: Identifiziert einen Europace-Vorgang.
         type: string
       baufiSmartVorgangsnummer:
-        description: Identifikation des assozierten BaufiSmart-Vorgangs, aus dem heraus der KreditSmart-Vorgang (vorgangsnummer) erstellt wurde.
+        description: Identifikation des assoziierten BaufiSmart-Vorgangs, aus dem heraus der KreditSmart-Vorgang (vorgangsnummer) erstellt wurde.
         type: string
       antragsteller:
         type: array
@@ -1003,7 +1003,7 @@ definitions:
         $ref: '#/definitions/angebot'
       supportMeldung:
         type: string
-        description: Hinweis für den Support, um zu verstehen, was im Backend los ist. (StackTrace oder sonsiger Hinweis auf das Problem)
+        description: Hinweis für den Support, um zu verstehen, was im Backend los ist. (StackTrace oder sonstiger Hinweis auf das Problem)
       dokumente:
         type: array
         items:
