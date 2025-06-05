@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 3.2.0
+  version: 3.3.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -1199,6 +1199,7 @@ definitions:
     enum:
       - VERSICHERUNGS_PRAEMIE_NETTO
       - VERSICHERUNGS_PRAEMIE_BRUTTO
+      - AUSZAHLUNGSBETRAG
 
   meldung:
     type: object
