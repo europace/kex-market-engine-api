@@ -1199,7 +1199,7 @@ definitions:
     enum:
       - VERSICHERUNGS_PRAEMIE_NETTO
       - VERSICHERUNGS_PRAEMIE_BRUTTO
-      - AUSZAHLUNGSBETRAG
+      - KREDIT_AUSZAHLUNGSBETRAG
 
   meldung:
     type: object
