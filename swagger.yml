@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 3.3.0
+  version: 3.3.1
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -240,6 +240,7 @@ definitions:
       derzeitigeBeschaeftigung:
         $ref: '#/definitions/derzeitigeBeschaeftigung'
       vorherigeBeschaeftigung:
+        description: "deprecated, don't use"
         $ref: '#/definitions/vorherigeBeschaeftigung'
       derzeitigeWohnsituation:
         $ref: '#/definitions/derzeitigeWohnsituation'
@@ -418,6 +419,7 @@ definitions:
       - PROBEZEIT
 
   vorherigeBeschaeftigung:
+    description: "deprecated, don't use"
     properties:
       beschaeftigungsbeginn:
         type: string

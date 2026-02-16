@@ -55,20 +55,6 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
         },
         "branche": "DIENSTLEISTUNGEN"
       },
-      "vorherigeBeschaeftigung": {
-        "beschaeftigungsbeginn": "2016-01-01",
-        "beschaeftigungsende": "2020-01-30",
-        "arbeitgeber": {
-          "name": "EXJOB GmbH",
-          "anschrift": {
-            "strasse": "Klosterstraße",
-            "hausnummer": "71",
-            "postleitzahl": "10179",
-            "ort": "Berlin",
-            "land": "DE"
-          }
-        }
-      },
       "derzeitigeWohnsituation": {
         "wohnart": "ZUR_MIETE",
         "wohnhaftSeit": "2020-03-01",
