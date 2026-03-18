@@ -17,7 +17,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
   "angebotsvariantentyp": "eyJhbmdlYm90c1ZhcmlhbnRlblR5cCI6eyJhbmdlYm90c1ZhcmlhbnRlblR5cCI6IlNPRk9SVEtSRURJVCIsInByb2R1emVudCI6IlNQSVRaRU5CQU5LIn19",
   "kontoumsaetze": [
     {
-      "kontoumsaetze": "aSdtIGEgc3dlZXQgbGl0dGxlIGtvbnRvdW1zYXR6",
+      "umsatzdaten": "aSdtIGEgc3dlZXQgbGl0dGxlIGtvbnRvdW1zYXR6",
       "antragstellerIds": [
         "eb51059a-ab2d-4253-9a7b-61864ae17123"
       ]
