@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 3.3.1
+  version: 3.4.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -304,6 +304,10 @@ definitions:
         type: string
       staatsangehoerigkeit:
         $ref: '#/definitions/land'
+      weitereStaatsangehoerigkeiten:
+        type: array
+        items:
+          $ref: '#/definitions/land'
       familienstand:
         $ref: '#/definitions/familienstand'
       anzahlPersonenImHaushalt:
