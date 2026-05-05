@@ -26,6 +26,7 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
         "geburtsort": "Berlin",
         "geburtsland": "DE",
         "staatsangehoerigkeit": "DE",
+        "weitereStaatsangehoerigkeiten": ["TR"],
         "familienstand": "LEDIG",
         "anzahlPersonenImHaushalt": 3
       },
