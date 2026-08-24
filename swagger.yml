@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 3.4.0
+  version: 3.5.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -167,6 +167,9 @@ definitions:
         type: string
       anrede:
         $ref: '#/definitions/anrede'
+      registrierungsnummer34k:
+        description: Registrierungsnummer des Vermittlers nach § 34k GewO (Gewerbeordnung). Wird im Europace-Partnermanagement gepflegt.
+        type: string
     required:
       - partnerId
       - firma
@@ -262,6 +265,40 @@ definitions:
         $ref: '#/definitions/legitimation'
       bonitaetsangaben:
         $ref: '#/definitions/bonitaetsangaben'
+      kommunikationsangaben:
+        $ref: '#/definitions/kommunikationsangaben'
+
+  kommunikationsangaben:
+    description: Die vom Verbraucher gewünschten Kommunikationswege gemäß Verbraucherkreditrichtlinie 2 (VKRL2 / CCD2). Wird je Antragsteller separat erfasst. Produktanbieter können einzelne Werte oder Kombinationen (z.B. abweichende Wege für Antragsteller 1 und 2) bei Europace ausschließen lassen - in diesen Fällen wird die Schnittstelle des Produktanbieters nicht angesprochen.
+    type: object
+    properties:
+      bereitstellungswegSecci:
+        description: Wie soll die Bank-VVI (SECCI) zur Verfügung gestellt werden?
+        $ref: '#/definitions/bereitstellungsweg'
+      kommunikationswegNachVertragsschluss:
+        description: Wie soll die Kommunikation zu Änderungen nach Vertragsschluss erfolgen?
+        $ref: '#/definitions/kommunikationsweg'
+      kommunikationswegHinweisWiderrufsfrist:
+        description: Wie soll der Hinweis zum Ablauf der Widerrufsfrist zur Verfügung gestellt werden?
+        $ref: '#/definitions/kommunikationsweg'
+      widerrufsweg:
+        description: Wie möchte der Verbraucher den Widerruf an den Produktanbieter richten?
+        $ref: '#/definitions/kommunikationsweg'
+
+  bereitstellungsweg:
+    description: Der vom Verbraucher gewünschte Weg für die Bereitstellung von Dokumenten. DIGITAL = ausschließlich digital. PAPIER = ausschließlich in Papierform. DIGITAL_PAPIER = in Papierform und zusätzlich digital, d.h. der Produktanbieter muss beide Wege bedienen.
+    type: string
+    enum:
+      - DIGITAL
+      - PAPIER
+      - DIGITAL_PAPIER
+
+  kommunikationsweg:
+    description: Der vom Verbraucher gewünschte Kommunikationsweg. DIGITAL = ausschließlich digital. PAPIER = ausschließlich in Papierform.
+    type: string
+    enum:
+      - DIGITAL
+      - PAPIER
 
   kontakt:
     type: object
