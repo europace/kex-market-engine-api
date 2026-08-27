@@ -168,6 +168,7 @@ We expect the Annahme-response on average within 30s. If the response time is si
 * [Accepting with shortfall](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-unterdeckung.md)
 * [Accepting with downselling](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-downselling.md)
 * [Accepting with account statements](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-kontoumsaetzen.md)
+* [Accepting with communication preferences](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-annahme-mit-kommunikationsangaben.md)
 * [Accepting with technical error](https://github.com/europace/kex-market-engine-api/blob/master/beispiele/example-technischer-fehler-antwort-annahme.md)
 
 ## Terms of use
