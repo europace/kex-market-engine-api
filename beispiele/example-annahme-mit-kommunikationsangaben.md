@@ -4,12 +4,13 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
 
 In diesem Beispiel werden die Kommunikationsangaben gemäß Verbraucherkreditrichtlinie 2 (VKRL2 / CCD2)
 übermittelt. Sie werden je Antragsteller separat erfasst und können sich zwischen den Antragstellern
-unterscheiden - hier wählt Antragstellerin 1 überwiegend den digitalen Weg, Antragsteller 2 überwiegend
+unterscheiden - hier wählt Antragstellerin 1 durchgängig den digitalen Weg, Antragsteller 2 überwiegend
 den Weg in Papierform.
 
-Der Wert `DIGITAL_PAPIER` ist ausschließlich für `bereitstellungswegSecci` zulässig. Er bedeutet, dass die
-Bank-VVI (SECCI) in Papierform **und zusätzlich** digital bereitgestellt werden muss. Für alle anderen
-Kommunikationswege stehen nur `DIGITAL` und `PAPIER` zur Verfügung.
+Für `bereitstellungswegSecci` gilt der Typ `bereitstellungsweg`, der die Bereitstellung von Dokumenten
+durch den Produktanbieter beschreibt. Für die übrigen drei Felder gilt der Typ `kommunikationsweg`, der
+die laufende Kommunikation und den Widerruf beschreibt. Beide Typen bieten die Werte `DIGITAL` und
+`PAPIER`.
 
 Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreuers.
 
@@ -90,7 +91,7 @@ Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreu
         }
       },
       "kommunikationsangaben": {
-        "bereitstellungswegSecci": "DIGITAL_PAPIER",
+        "bereitstellungswegSecci": "DIGITAL",
         "kommunikationswegNachVertragsschluss": "DIGITAL",
         "kommunikationswegHinweisWiderrufsfrist": "DIGITAL",
         "widerrufsweg": "DIGITAL"
@@ -263,8 +264,8 @@ gekürzt dargestellt - Bonitätscheck und Tilgungsplan sind ausgelassen.
     "meldungen": [
       {
         "kategorie": "HINWEIS",
-        "text": "Die Bank-VVI wird für Antragstellerin 1 zusätzlich digital bereitgestellt.",
-        "code": "bank.hinweis.secci.zusaetzlich.digital"
+        "text": "Die Bank-VVI wird für Antragsteller 2 in Papierform versandt.",
+        "code": "bank.hinweis.secci.papierform"
       }
     ],
     "unterlagen": [
