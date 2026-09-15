@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 3.5.0
+  version: 4.0.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -290,7 +290,7 @@ definitions:
     type: string
     enum:
       - DIGITAL
-      - PAPIER
+      - DIGITAL_PAPIER
 
   kommunikationsweg:
     description: Der vom Verbraucher gewählte Weg für die laufende Kommunikation mit dem Produktanbieter und für den Widerruf. DIGITAL = ausschließlich digital. PAPIER = ausschließlich in Papierform.
