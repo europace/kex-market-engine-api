@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 4.0.0
+  version: 5.0.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -278,15 +278,15 @@ definitions:
       kommunikationswegNachVertragsschluss:
         description: Wie soll die Kommunikation zu Änderungen nach Vertragsschluss erfolgen?
         $ref: '#/definitions/kommunikationsweg'
-      kommunikationswegHinweisWiderrufsfrist:
-        description: Wie soll der Hinweis zum Ablauf der Widerrufsfrist zur Verfügung gestellt werden?
+      kommunikationswegErinnerungWiderrufsrecht:
+        description: Wie soll die Erinnerung zum Ablauf der Widerrufsfrist zur Verfügung gestellt werden?
         $ref: '#/definitions/kommunikationsweg'
-      widerrufsweg:
+      kommunikationswegWiderruf:
         description: Wie möchte der Verbraucher den Widerruf an den Produktanbieter richten?
         $ref: '#/definitions/kommunikationsweg'
 
   bereitstellungsweg:
-    description: Der vom Verbraucher gewählte Weg für die Bereitstellung von Dokumenten durch den Produktanbieter. DIGITAL = ausschließlich digital. PAPIER = ausschließlich in Papierform.
+    description: Der vom Verbraucher gewählte Weg für die Bereitstellung von Dokumenten des Produktanbieters. DIGITAL = ausschließlich digitale Bereitstellung. DIGITAL_PAPIER = digitale Bereitstellung und zusätzliche Bereitstellung in Papierform.
     type: string
     enum:
       - DIGITAL
