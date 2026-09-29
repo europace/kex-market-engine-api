@@ -286,7 +286,7 @@ definitions:
         $ref: '#/definitions/kommunikationsweg'
 
   bereitstellungsweg:
-    description: Der vom Verbraucher gewählte Weg für die Bereitstellung von Dokumenten durch den Produktanbieter. DIGITAL = ausschließlich digital. PAPIER = ausschließlich in Papierform.
+    description: Der vom Verbraucher gewählte Weg für die Bereitstellung von Dokumenten durch den Produktanbieter. DIGITAL = ausschließlich digitale Bereitstellung. DIGITAL_PAPIER = digitale Bereitstellung und zusätzliche Bereitstellung in Papierform.
     type: string
     enum:
       - DIGITAL
