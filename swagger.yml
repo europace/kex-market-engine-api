@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 5.0.0
+  version: 5.1.0
   title: KEX Market Engine API
 basePath: /v1
 schemes:
@@ -783,6 +783,10 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/immobiliendarlehen'
+      ratenkaeufe:
+        type: array
+        items:
+          $ref: '#/definitions/ratenkauf'
 
   ratenkredit:
     type: object
@@ -872,6 +876,18 @@ definitions:
         $ref: '#/definitions/euro'
       restschuld:
         $ref: '#/definitions/euro'
+
+  ratenkauf:
+    type: object
+    properties:
+      id:
+        type: string
+      monatlicheRate:
+        $ref: '#/definitions/euro'
+      restschuld:
+        $ref: '#/definitions/euro'
+      glaeubiger:
+        type: string
 
   ###
   ### Finanzierungswunsch

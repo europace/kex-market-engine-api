@@ -150,7 +150,15 @@ Es handelt sich um ein Beispiel zum besseren Verständnis der API.
               "glaeubiger": "MUSTERBANK"
             }
           ],
-          "immobiliendarlehen": []
+          "immobiliendarlehen": [],
+          "ratenkaeufe": [
+            {
+              "id": "dtmjhuyg7-9877-ly6z-91pl-iihyf7anbhv01w",
+              "monatlicheRate": 33.76,
+              "restschuld": 114.42,
+              "glaeubiger": "MUSTER VOLKSBANK"
+            }
+          ]
         }
       }
     }
