@@ -7,10 +7,10 @@ In diesem Beispiel werden die Kommunikationsangaben gemäß Verbraucherkreditric
 unterscheiden - hier wählt Antragstellerin 1 durchgängig den digitalen Weg, Antragsteller 2 überwiegend
 den Weg in Papierform.
 
-Für `bereitstellungswegSecci` gilt der Typ `bereitstellungsweg`, der die Bereitstellung von Dokumenten
-durch den Produktanbieter beschreibt. Für die übrigen drei Felder gilt der Typ `kommunikationsweg`, der
-die laufende Kommunikation und den Widerruf beschreibt. Beide Typen bieten die Werte `DIGITAL` und
-`PAPIER`.
+Für `bereitstellungswegSecci` gilt der Typ `bereitstellungsweg` mit den Ausprägungen `DIGITAL` und
+`DIGITAL_PAPIER`, der die Bereitstellung von Dokumenten durch den Produktanbieter beschreibt. Für die übrigen drei Felder gilt der Typ `kommunikationsweg`, der
+die laufende Kommunikation und den Widerruf beschreibt und die Ausprägungen `DIGITAL` und
+`PAPIER` kennt.
 
 Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreuers.
 
@@ -91,7 +91,7 @@ Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreu
         }
       },
       "kommunikationsangaben": {
-        "bereitstellungswegSecci": "DIGITAL",
+        "bereitstellungswegSecci": "DIGITAL_PAPIER",
         "kommunikationswegNachVertragsschluss": "DIGITAL",
         "kommunikationswegHinweisWiderrufsfrist": "DIGITAL",
         "widerrufsweg": "DIGITAL"
@@ -157,7 +157,7 @@ Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreu
         }
       },
       "kommunikationsangaben": {
-        "bereitstellungswegSecci": "PAPIER",
+        "bereitstellungswegSecci": "DIGITAL",
         "kommunikationswegNachVertragsschluss": "PAPIER",
         "kommunikationswegHinweisWiderrufsfrist": "DIGITAL",
         "widerrufsweg": "PAPIER"
