@@ -93,8 +93,8 @@ Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreu
       "kommunikationsangaben": {
         "bereitstellungswegSecci": "DIGITAL_PAPIER",
         "kommunikationswegNachVertragsschluss": "DIGITAL",
-        "kommunikationswegHinweisWiderrufsfrist": "DIGITAL",
-        "widerrufsweg": "DIGITAL"
+        "kommunikationswegErinnerungWiderrufsrecht": "DIGITAL",
+        "kommunikationswegWiderruf": "DIGITAL"
       }
     },
     {
@@ -159,8 +159,8 @@ Zusätzlich enthält das Beispiel die `registrierungsnummer34k` des Kundenbetreu
       "kommunikationsangaben": {
         "bereitstellungswegSecci": "DIGITAL",
         "kommunikationswegNachVertragsschluss": "PAPIER",
-        "kommunikationswegHinweisWiderrufsfrist": "DIGITAL",
-        "widerrufsweg": "PAPIER"
+        "kommunikationswegErinnerungWiderrufsrecht": "DIGITAL",
+        "kommunikationswegWiderruf": "PAPIER"
       }
     }
   ],
